@@ -1,470 +1,491 @@
 #Rate Limits
-
 ---
-
 # Trending Post Subreddit Karma Filter
 
 parent_submission:
-    flair_template_id:
+  flair_template_id: "d1dfd2ce-4980-11f0-a96a-6e74df61da0b"
 type: comment
 author:
-    combined_subreddit_karma: "<10"
+  combined_subreddit_karma: "<10"
+  is_contributor: false
 action: remove
 action_reason: "Low Subreddit Karma - Trending Post"
 
 ---
+parent_submission:
+  flair_template_id: "469c41d8-4981-11f0-9a4a-621247ea4834"
+type: comment
+author:
+  combined_subreddit_karma: "<20"
+  is_contributor: false
+action: remove
+action_reason: "Low Subreddit Karma - Political Post"
 
+---
 type: submission
 priority: 1
 author:
-    post_karma: "< 250"
-    comment_karma: "< 250"
-    is_contributor: false
-    satisfy_any_threshold: false
+  post_karma: "< 15"
+  comment_karma: "< 15"
+  is_contributor: false
+  satisfy_any_threshold: false
 set_locked: true
 action: remove
-action_reason: 'Low Karma for Posting'
+action_reason: "Low Karma for Posting"
 message: |
-    **Your submission on r/Folsom has been automatically removed**  
-    **Please read this message in full to avoid being muted.**
+  **Your submission on r/Folsom has been automatically removed**  
+  **Please read this message in full to avoid being muted.**
 
-    Your submission on r/Folsom has been automatically removed as your account does not have enough karma to post here.
+  Your submission on r/Folsom has been automatically removed as your account does not have enough karma to post here.
 
-    We implemented a karma requirement to circumvent bots and spam but also to make sure anyone who posts here gets to know the subreddit a bit before they post. Note that we are not accusing you of being a bot; it's just a safeguard. If you do not know what karma is, see this link: [Understanding Reddit Karma](https://reddit.zendesk.com/hc/en-us/articles/204511829-What-is-karma-).
+  We implemented a karma requirement to circumvent bots and spam but also to make sure anyone who posts here gets to know the subreddit a bit before they post. Note that we are not accusing you of being a bot; it is just a safeguard. If you do not know what karma is, see this link: [Understanding Reddit Karma](https://reddit.zendesk.com/hc/en-us/articles/204511829-What-is-karma-).
 
-    **Understanding Reddit Karma**  
-    Karma is a score that represents how much the Reddit community values your contributions. You earn karma when your posts or comments get upvoted, and you lose karma when they get downvoted. This score is cumulative across all of Reddit and is visible on your profile. It reflects your overall activity and engagement on the platform but is not tied to any specific subreddit.
+  **Understanding Reddit Karma**  
+  Karma is a score that represents how much the Reddit community values your contributions. You earn karma when your posts or comments get upvoted, and you lose karma when they get downvoted. This score is cumulative across all of Reddit and is visible on your profile. It reflects your overall activity and engagement on the platform but is not tied to any specific subreddit.
 
-    **Please message the moderators of r/Folsom if you have any additional questions.**  
-    *Do not message us just to complain about the karma requirement – it will be ignored.*
+  **Please message the moderators of r/Folsom if you have any additional questions.**  
+  *Do not message us just to complain about the karma requirement – it will be ignored.*
 
 ---
-
 type: comment
 priority: 1
 author:
-    post_karma: "< 100"
-    comment_karma: "< 100"
-    is_contributor: false
-    satisfy_any_threshold: false
+  post_karma: "< 15"
+  comment_karma: "< 15"
+  is_contributor: false
+  satisfy_any_threshold: false
 set_locked: true
 action: remove
-action_reason: 'Low Karma for Commenting'
+action_reason: "Low Karma for Commenting"
 message: |
-    **Your comment on r/Folsom has been automatically removed**  
-    **Please read this message in full to avoid being muted.**
+  **Your comment on r/Folsom has been automatically removed**  
+  **Please read this message in full to avoid being muted.**
 
-    Your comment on r/Folsom has been automatically removed as your account does not have enough karma to comment here.
+  Your comment on r/Folsom has been automatically removed as your account does not have enough karma to comment here.
 
-    We implemented a karma requirement to circumvent bots and spam but also to make sure anyone who comments here gets to know the subreddit a bit before they participate. Note that we are not accusing you of being a bot; it's just a safeguard. If you do not know what karma is, see this link: [Understanding Reddit Karma](https://reddit.zendesk.com/hc/en-us/articles/204511829-What-is-karma-).
+  We implemented a karma requirement to circumvent bots and spam but also to make sure anyone who comments here gets to know the subreddit a bit before they participate. Note that we are not accusing you of being a bot; it is just a safeguard. If you do not know what karma is, see this link: [Understanding Reddit Karma](https://reddit.zendesk.com/hc/en-us/articles/204511829-What-is-karma-).
 
-    **Understanding Reddit Karma**  
-    Karma is a score that represents how much the Reddit community values your contributions. You earn karma when your posts or comments get upvoted, and you lose karma when they get downvoted. This score is cumulative across all of Reddit and is visible on your profile. It reflects your overall activity and engagement on the platform but is not tied to any specific subreddit.
+  **Understanding Reddit Karma**  
+  Karma is a score that represents how much the Reddit community values your contributions. You earn karma when your posts or comments get upvoted, and you lose karma when they get downvoted. This score is cumulative across all of Reddit and is visible on your profile. It reflects your overall activity and engagement on the platform but is not tied to any specific subreddit.
 
-    **Please message the moderators of r/California if you have any additional questions.**  
-    *Do not message us just to complain about the karma requirement – it will be ignored.*
+  **Please message the moderators of r/Folsom if you have any additional questions.**  
+  *Do not message us just to complain about the karma requirement – it will be ignored.*
 
 ---
-
 # QUALITY CONTROL
-
 ---
 ## Traffic Light System
 
 # GreenLight Domains
-  priority: 3
-  type: submission
-  domain+body (includes): ["test1.com", "test2.com", "test3.com"]
-  action: approve
-  action_reason: "GreenLight domain. [{{match}}]"
+# priority: 3
+# type: submission
+# domain+body (includes): ["test1.com", "test2.com", "test3.com"]
+# action: approve
+# action_reason: "GreenLight domain. [{{match}}]"
 
 # RedLight Domains
-  priority: 2
-  type: submission
-  domain+body (includes): ["test1.com.com", "test2.com","test3.com"]
-  action: remove
-  action_reason: "RedLight domain. [{{match}}]"
+priority: 2
+type: submission
+domain+body (includes): ["x.com", "twitter.com", "truthsocial.com"]
+action: remove
+action_reason: "RedLight domain. [{{match}}]"
 
 # AmberLight Domains (for any other link submissions)
-  priority: 1
-  type: link submission
-  action: filter
-  action_reason: "Unrecognized domain. [{{match}}]"
+# priority: 1
+# type: link submission
+# action: filter
+# action_reason: "Unrecognized domain. [{{match}}]"
 
 ---
-
 # PI FILTERS
+---
+# Remove phone numbers and send modmail for review
+title+body (regex):
+  [
+    "\\(?(\\d{3})\\)?([ .-])(\\d{3})([ .-])(\\d{4})",
+    "(\\d{5})([ .-])(\\d{6})",
+    "\\(?(\\d{4})\\)?([ .-])(\\d{3})([ .-])(\\d{3})",
+    "\\(?(\\d{2})\\)?([ .-])(\\d{4})([ .-])(\\d{4})",
+    "\\(?(\\d{2})\\)?([ .-])(\\d{3})([ .-])(\\d{4})",
+    "\\+([\\d ]{10,15})",
+  ]
+~body+url (regex): "(\\[[^\\]]+?\\]\\()?(https?://|www\\.)\\S+\\)?"
+~body+title+url (regex):
+  [
+    "(800|855|866|877|888|007|911)\\W*\\d{3}\\W*\\d{4}",
+    "\\d{3}\\W*555\\W*\\d{4}",
+    "999-999-9999",
+    "000-000-0000",
+    "123-456-7890",
+    "111-111-1111",
+    "012-345-6789",
+    "888-888-8888",
+    "281\\W*330\\W*8004",
+    "777-777-7777",
+    "678-999-8212",
+    "999([ .-])119([ .-])7253",
+    "0118 999 811",
+    "0118 999 881",
+    "867( -)?5309",
+    "505\\W*503\\W*4455",
+    "1024 2048",
+  ]
+action: remove
+action_reason: Phone number
 
 ---
-
-# Remove phone numbers and send modmail for review  
-    title+body (regex): ["\\(?(\\d{3})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","(\\d{5})([ .-])(\\d{6})","\\(?(\\d{4})\\)?([ .-])(\\d{3})([ .-])(\\d{3})","\\(?(\\d{2})\\)?([ .-])(\\d{4})([ .-])(\\d{4})","\\(?(\\d{2})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","\\+([\\d ]{10,15})"]
-    ~body+url (regex): "(\\[[^\\]]+?\\]\\()?(https?://|www\\.)\\S+\\)?"
-    ~body+title+url (regex): ["(800|855|866|877|888|007|911)\\W*\\d{3}\\W*\\d{4}", "\\d{3}\\W*555\\W*\\d{4}", "999-999-9999", "000-000-0000", "123-456-7890", "111-111-1111", "012-345-6789", "888-888-8888", "281\\W*330\\W*8004", "777-777-7777", "678-999-8212", "999([ .-])119([ .-])7253","0118 999 811","0118 999 881", "867( -)?5309", "505\\W*503\\W*4455", "1024 2048"]
-    action: remove
-    action_reason: Phone number
-    
----
-
 # Remove email addresses and send modmail for review
-    title+body (regex): "[!#$%&amp;'*+./0-9=?_`a-z{|}~^-]+@[.a-z-]+\\.(?:com|org|net)"
-    action: remove
-    action_reason: Email
-   
----
+title+body (regex): "[!#$%&amp;'*+./0-9=?_`a-z{|}~^-]+@[.a-z-]+\\.(?:com|org|net)"
+action: remove
+action_reason: Email
 
+---
 # Remove valid credit card numbers and send modmail for review
-    title+body (regex): "\\b(?:4[0-9]{12}(?:[0-9]{3})?|5[12345][0-9]{14}|3[47][0-9]{13}|3(?:0[012345]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35[0-9]{3})[0-9]{11})\\b"
-    action: remove
-    action_reason: Credit card
-   
----
+title+body (regex): "\\b(?:4[0-9]{12}(?:[0-9]{3})?|5[12345][0-9]{14}|3[47][0-9]{13}|3(?:0[012345]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35[0-9]{3})[0-9]{11})\\b"
+action: remove
+action_reason: Credit card
 
+---
 # Remove valid IPv4 addresses and send modmail for review
-    title+body (regex): "\\b([0-9]{1,3}(?<!192|168))\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\b"
-    action: remove
-    action_reason: Ip address
-    
+title+body (regex): "\\b([0-9]{1,3}(?<!192|168))\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\b"
+action: remove
+action_reason: Ip address
+
 ---
-
 # CIVILITY FILTERS
-
 ---
 ## General Hate Slurs / Dehumanization
 
 type: any
-title+body (regex): [
-  '(?!homo\\W?sapien)homosb?\\',
-  '(re|fuck|jerk|lib|republi)?(?<!bas)tard(s|ed(ly)?)?',
-  'beetusbehemoths?',
-  'bundle of (billets|sticks|wood)',
-  'chimpires?',
-  'christ\\W?killers?',
-  'cuck(old)?s?',
-  'fat\\W?fucks?',
-  'fuck\\W?(wit(?!h)s?|tards?)',
-  'fuck\\W?boys?',
-  'fucking\\W?(whores?)',
-  'fupas?',
-  'shit\\W?(bag|dick|lord)s?',
-  'shoahs?',
-  'whore\\W?mouth'
-]
+title+body (regex):
+  [
+    '(?!homo\\W?sapien)homosb?\\',
+    "(re|fuck|jerk|lib|republi)?(?<!bas)tard(s|ed(ly)?)?",
+    "beetusbehemoths?",
+    "bundle of (billets|sticks|wood)",
+    "chimpires?",
+    'christ\\W?killers?',
+    "cuck(old)?s?",
+    'fat\\W?fucks?',
+    'fuck\\W?(wit(?!h)s?|tards?)',
+    'fuck\\W?boys?',
+    'fucking\\W?(whores?)',
+    "fupas?",
+    'shit\\W?(bag|dick|lord)s?',
+    "shoahs?",
+    'whore\\W?mouth',
+  ]
 action: filter
 action_reason: "Uncivil | General hate speech [{{match}}]"
 
 ---
-
 ## Complicated Slurs (Highly Variable Spellings)
 
 type: any
-title+body (regex, includes-word): [
-  'groids?',
-  'hood[- ]?rats?',
-  'n[i!*#]+gg?(rs?|lets?|ett?es?|ress|esses?|ers?|oe?s?|ae|as?|irs?|!rs?|s|0rs?|r0e?s?)',
-  'k[iy]kes?',
-  'beaners?',
-  'spick?s?',
-  'wetbacks?',
-  'gooks?',
-  'chinks?',
-  'fagg?([eio]t)?(ry)?s?',
-  'd[iy]kes?',
-  'trann(y|ie)s?',
-  'honk(ie|y)',
-  'pak(i|ee)',
-  'cock[- ]?sucker',
-  'shit[- ]?lord',
-  'fur[- ]fag',
-  'muff[ -]?div(er?|ing)',
-  'pol[el][ -]?smoke(ing|r)?',
-  'porch ?monke?y',
-  'white ?guilt',
-  'coolies?',
-  '(re|fuck|lib|republi)tard(s|ed|(ed)?ness)?',
-  '(mongol|negr)oids?',
-  'sheboons?',
-  'republi(q|kk?k?)ans?'
-]
+title+body (regex, includes-word):
+  [
+    "groids?",
+    "hood[- ]?rats?",
+    "n[i!*#]+gg?(rs?|lets?|ett?es?|ress|esses?|ers?|oe?s?|ae|as?|irs?|!rs?|s|0rs?|r0e?s?)",
+    "k[iy]kes?",
+    "beaners?",
+    "spick?s?",
+    "wetbacks?",
+    "gooks?",
+    "chinks?",
+    "fagg?([eio]t)?(ry)?s?",
+    "d[iy]kes?",
+    "trann(y|ie)s?",
+    "honk(ie|y)",
+    "pak(i|ee)",
+    "cock[- ]?sucker",
+    "shit[- ]?lord",
+    "fur[- ]fag",
+    "muff[ -]?div(er?|ing)",
+    "pol[el][ -]?smoke(ing|r)?",
+    "porch ?monke?y",
+    "white ?guilt",
+    "coolies?",
+    "(re|fuck|lib|republi)tard(s|ed|(ed)?ness)?",
+    "(mongol|negr)oids?",
+    "sheboons?",
+    "republi(q|kk?k?)ans?",
+  ]
 action: filter
-action_reason: "Uncivl | Complicated slurs [{{match}}]"
+action_reason: "Uncivil | Complicated slurs [{{match}}]"
 
 ---
-
 ## Racism & Racialized Slurs
 
 type: any
-title+body (regex): [
-  '(p[0o]rch|sand)\\W?m[0o]nk(ey|ie|y)s?',
-  '(p[0o]rch|sand)\\W?nigg(er|r|a|let)s?',
-  '(shit|mud)\\W?skins?',
-  'coons?(y|i?e?s?|er)',
-  'dark(e?y|ies?)',
-  'dind[ou]s?',
-  'dune\\W?coone?r?s?',
-  'g(ooks?|00ks?)',
-  'groids?',
-  'half\\W?breeds?',
-  'honk(ie|ey|y)s?',
-  'j[!i]gg?[aer]+(boo?s?|b00?s?)',
-  'jigg?[aer]+(b[0o]ing)',
-  'juden',
-  'jungle\\W?bunn(y|ie)?s?',
-  'moon\\W?crickets?',
-  'mud\\W?(child(ren)?|skin)s?',
-  'n[1!i]gs?-?(?!ht)',
-  'n[i!j1e]+gg?(rs?|ett?e?s?|lets?|ress?e?s?|r[a0oe]s?|[ie@ao0!]rs?|r[o0]ids?|ab[o0]s?|erest)',
-  'n[i1][g6][g6]?(?!ht)([e3]r)?(n[o0]g|l[e3]t|r[e3][s5][s5])?([e3]?[s5])?',
-  'nigg(er|r|r?a|lett?)s?z?(?!ht)',
-  'nigg?[aeoi]s?',
-  'nig(gs?|s)',
-  'obeasts?',
-  'tarbab(ys?|ies?)',
-  'wet\\W?backs?',
-  'spear\\W?chuckers?',
-  'suspooks?',
-  'china\\W?m[ae]n',
-  'beane[ry]s?',
-  'boot\\W?lips?',
-  'high\\W?yellows?'
-]
+title+body (regex):
+  [
+    '(p[0o]rch|sand)\\W?m[0o]nk(ey|ie|y)s?',
+    '(p[0o]rch|sand)\\W?nigg(er|r|a|let)s?',
+    '(shit|mud)\\W?skins?',
+    "coons?(y|i?e?s?|er)",
+    "dark(e?y|ies?)",
+    "dind[ou]s?",
+    'dune\\W?coone?r?s?',
+    "g(ooks?|00ks?)",
+    "groids?",
+    'half\\W?breeds?',
+    "honk(ie|ey|y)s?",
+    "j[!i]gg?[aer]+(boo?s?|b00?s?)",
+    "jigg?[aer]+(b[0o]ing)",
+    "juden",
+    'jungle\\W?bunn(y|ie)?s?',
+    'moon\\W?crickets?',
+    'mud\\W?(child(ren)?|skin)s?',
+    "n[1!i]gs?-?(?!ht)",
+    "n[i!j1e]+gg?(rs?|ett?e?s?|lets?|ress?e?s?|r[a0oe]s?|[ie@ao0!]rs?|r[o0]ids?|ab[o0]s?|erest)",
+    "n[i1][g6][g6]?(?!ht)([e3]r)?(n[o0]g|l[e3]t|r[e3][s5][s5])?([e3]?[s5])?",
+    "nigg(er|r|r?a|lett?)s?z?(?!ht)",
+    "nigg?[aeoi]s?",
+    "nig(gs?|s)",
+    "obeasts?",
+    "tarbab(ys?|ies?)",
+    'wet\\W?backs?',
+    'spear\\W?chuckers?',
+    "suspooks?",
+    'china\\W?m[ae]n',
+    "beane[ry]s?",
+    'boot\\W?lips?',
+    'high\\W?yellows?',
+  ]
 action: filter
 action_reason: "Uncivil | Racism / ethnic slurs [{{match}}]"
 
---- 
-
+---
 ## Anti-Muslim / South Asian / Immigrant Hate
 
 type: any
-title+body (regex): [
-  'cultural(ly)? enrich(ment|ed)',
-  'aisha',
-  'religion of (peace|pieces?|piss)',
-  'pbuh',
-  'snackbar',
-  '(towel|diaper|rag).?head[sz]*',
-  'jizya',
-  'ta(qq?|k)iyy?a',
-  'multicult(i|ural)?(ism|ist[sz]*)?',
-  'thereligionofpeace.com',
-  '(madar|mader|behen|bhain|bhen|boka|bak|bok)?chodu?',
-  'paki[sz]*',
-  'failed.?state.?istani[sz]*',
-  'mud.?slime[sz]*',
-  'muzzie[sz]*',
-  '(pali|aap|modi)(tard|bot|bhakt)',
-  'd(i|e|u)rkah?',
-  '(peaces?|piss).?be.?upon.?him',
-  'f[iu]zz?[iey]*.?faced?',
-  '72 virgins',
-  'remove.?kebab',
-  'goat.?fucker[sz]*',
-  'sh[ie]+t+.?skin[sz]*',
-  'turd.?(whirl|burglar)',
-  '(kor|qur)animal[sz]*'
-]
+title+body (regex):
+  [
+    "cultural(ly)? enrich(ment|ed)",
+    "aisha",
+    "religion of (peace|pieces?|piss)",
+    "pbuh",
+    "snackbar",
+    "(towel|diaper|rag).?head[sz]*",
+    "jizya",
+    "ta(qq?|k)iyy?a",
+    "multicult(i|ural)?(ism|ist[sz]*)?",
+    "thereligionofpeace.com",
+    "(madar|mader|behen|bhain|bhen|boka|bak|bok)?chodu?",
+    "paki[sz]*",
+    "failed.?state.?istani[sz]*",
+    "mud.?slime[sz]*",
+    "muzzie[sz]*",
+    "(pali|aap|modi)(tard|bot|bhakt)",
+    "d(i|e|u)rkah?",
+    "(peaces?|piss).?be.?upon.?him",
+    "f[iu]zz?[iey]*.?faced?",
+    "72 virgins",
+    "remove.?kebab",
+    "goat.?fucker[sz]*",
+    "sh[ie]+t+.?skin[sz]*",
+    "turd.?(whirl|burglar)",
+    "(kor|qur)animal[sz]*",
+  ]
 action: filter
 action_reason: "Uncivil | Anti-Muslim/Indian/Hindi/Immigrant [{{match}}]"
 
 ---
-
 ## LGBTQ+ / Transphobia
 
 type: any
-title+body (regex): [
-  'leg[_ -]?beard[sz]*',
-  'd[iy]ke[sz]*',
-  'tran+[iey]+',
-  'trann?(y|ies)',
-  'she[- _]?male[sz]*',
-  'f(in|lan)sexual(ity)',
-  'trans[\\s-]?rac',
-  '\\btifs?\\b',
-  'You will never be a (real )?(woman|man)',
-  'ywnba(r)?(m|w)',
-  '(2|two)\\s?genders',
-  'male and female',
-  'fag(g?[ioe]tt?)?(ry|s)?',
-  '(ph|f)[@a]gg?([e0aio]t|oted|otry)?s?',
-  'gaywads?',
-  'ghey',
-  'queer\\W?bags?',
-  'cock\\W?suckers?',
-  'lady\\W?boys?',
-  'lesbos?'
-]
+title+body (regex):
+  [
+    "leg[_ -]?beard[sz]*",
+    "d[iy]ke[sz]*",
+    "tran+[iey]+",
+    "trann?(y|ies)",
+    "she[- _]?male[sz]*",
+    "f(in|lan)sexual(ity)",
+    'trans[\\s-]?rac',
+    '\\btifs?\\b',
+    "You will never be a (real )?(woman|man)",
+    "ywnba(r)?(m|w)",
+    '(2|two)\\s?genders',
+    "male and female",
+    "fag(g?[ioe]tt?)?(ry|s)?",
+    "(ph|f)[@a]gg?([e0aio]t|oted|otry)?s?",
+    "gaywads?",
+    "ghey",
+    'queer\\W?bags?',
+    'cock\\W?suckers?',
+    'lady\\W?boys?',
+    "lesbos?",
+  ]
 action: filter
 action_reason: "Uncivil | LGBTQ+ / Transphobia [{{match}}]"
 
 ---
-
 ## Antisemitism
 
 type: any
-title+body (regex): [
-  'k[iy]ke[sz]*',
-  'goy[ie]+m',
-  'cho+s+en.?(p[eo]*ple?[sz]*|one|1)',
-  'sc?hkutz?',
-  'sc?h[ie]ksah?'
-]
+title+body (regex):
+  [
+    "k[iy]ke[sz]*",
+    "goy[ie]+m",
+    "cho+s+en.?(p[eo]*ple?[sz]*|one|1)",
+    "sc?hkutz?",
+    "sc?h[ie]ksah?",
+  ]
 action: filter
 action_reason: "Uncivil | Antisemitism [{{match}}]"
 
 ---
-
 # SUICIDE/SELF-HARM/MEDICAL FILTER
-
 ---
-
 # Suicide watch 1
 type: submission
 title+body (includes, regex): [
-  'how likely is it to die from',
-  'to be no chance of surviving',
-  '^Why should I.{1,10}keep going.{0,1}$',
-  '(want to|wan|wanna|have the urge to|need to|should|have to|help me|like to) (die\b|jump off a building|take the leap to death|my own death)',
-  'sleep (for eternity|forever|and.{1,10}never wake)',
-  '(eternal|forever) sleep',
-  '\bend(ing)? it all',
-  'wants? to end it',
-  '(thinking of|considering) death by',
-  '(Why bother|(What.{0,1}s the|no) point (of|in)) (living|staying alive|keeping going|going on)',
-  '(get|hire) someone to kill (you|me)',
-  'get euthanized',
-  'jump in front of a (subway|train)',
-  '(will|would) I die (instantly|pain(less|ful)ly|quickly)',
-  'cyanide.{1,10}cherry (pit|seed)',
-  'put a hit out on yourself',
-  'How long does it take for.{1,15}to die',
-  '(my|a) (last|final|good-?bye|farewell) note',
-  '(reason to want|motivation) to live',
-  'leav(e|ing) this life',
-  'It’s cruel to be alive',
-  'Nothing makes me happy',
-  'What''s the point of anything any',
-  'don''t care about life anymore',
-  'give myself the rope',
-  '(life (isn''t|is not)|is life) worth it',
-  'Life is (just )?(pain|suffering|misery|torture)',
-  'the only happiness I feel',
-  'I feel so empty inside',
-  'I hate my life',
-  'how to give (your|my|one)self.{1,10}((terminal|fatal) (illness|disease)|(terminal|fatal)? ?cancer)',
-  'how (lethal|deadly) is it',
-  '\boff(s|ed|ing)? (my|your|them|him|her|ones|one[’]s) ?sel(f|ves)',
-  'make a noose',
-  'sue [ai] [sc]ide',
-  '\bkms\b',
-  'least painful way to',
-  'die in a pain(less|ful)',
-  '\bcom+it+(ing|ed) [s$]',
-  'I don’t feel like living',
-  '(how|way) to die',
-  'How long does it take to die',
-  '^(?=.*\bdie\b)(?=.*\bpain(ful|less)\b).*$',
-  'Does it hurt to (OD\b|overdose|drown)',
-  'would.{1,40}kill (you|someone|me)',
-  'to kill me',
-  'is it (possible|likely|guaranteed) to die from',
-  '(don[’]t|do not) want to live(?! (near|with (a|my)? ?(roommate|parent)|in an?.{1,10}apartment))',
-  'stop living(?! (in fear|near|with (a|my)? ?(roommate|parent)|in an?.{1,10}apartment))',
-  '(what[’]s|what is|whats|I don[’]t see) the point of ((my )?life|living|going on if)',
-  '(how (many|much)|number of)(?! adults| people| children).{1,50}(\bOD\b|over ?dose|\bdie(s|d)?\b|lethal|\bkill|death|to die\b)',
-  'sewer ?[sc]l?ide', ##Sewer slide and Sewer cide both used to get around filters
-  'cause me to (OD|overdose)\b',
-  '(\bOD|overdose) on (morphine)',
-  '(leaving|quitting|exiting) this world',
-  '(instantly|painlessly) kill (you|me)',
-  'painless and quick',
-  'quick and painless',
-  'Will I suffer (from|if)',
-  'right to die',
-  'Take to kill you',
-  'feel like i have nothing left',
-  'k://',
-  'how.{1,10}(get|buy).{1,20}pure nitrogen',
-  '(would|will) (you|I|someone) (feel (any )?pain|survive) if',
-  '\bsui\*\*',
-  '(painless|least painful) way',
-  '(ready|want|going) to top myself',
-  'self[- ]elimination',
-  '(Is|Would).{10,60}(deadly|fatal)\?',
-  'cyanide( pill)?',
-  'k(y|m)(s|5)',
-  '(stab|shoot) (their|them|my|(yo)?ur|hi[sm]|her|ones|one[’]s)(sel(f|ves))?',
-  '(have left|nothing) to live for',
-  'way to cut myself',
-]
+    "how likely is it to die from",
+    "to be no chance of surviving",
+    "^Why should I.{1,10}keep going.{0,1}$",
+    '(want to|wan|wanna|have the urge to|need to|should|have to|help me|like to) (die\b|jump off a building|take the leap to death|my own death)',
+    "sleep (for eternity|forever|and.{1,10}never wake)",
+    "(eternal|forever) sleep",
+    '\bend(ing)? it all',
+    "wants? to end it",
+    "(thinking of|considering) death by",
+    "(Why bother|(What.{0,1}s the|no) point (of|in)) (living|staying alive|keeping going|going on)",
+    "(get|hire) someone to kill (you|me)",
+    "get euthanized",
+    "jump in front of a (subway|train)",
+    "(will|would) I die (instantly|pain(less|ful)ly|quickly)",
+    "cyanide.{1,10}cherry (pit|seed)",
+    "put a hit out on yourself",
+    "How long does it take for.{1,15}to die",
+    "(my|a) (last|final|good-?bye|farewell) note",
+    "(reason to want|motivation) to live",
+    "leav(e|ing) this life",
+    "It’s cruel to be alive",
+    "Nothing makes me happy",
+    "What's the point of anything any",
+    "don't care about life anymore",
+    "give myself the rope",
+    "(life (isn't|is not)|is life) worth it",
+    "Life is (just )?(pain|suffering|misery|torture)",
+    "the only happiness I feel",
+    "I feel so empty inside",
+    "I hate my life",
+    "how to give (your|my|one)self.{1,10}((terminal|fatal) (illness|disease)|(terminal|fatal)? ?cancer)",
+    "how (lethal|deadly) is it",
+    '\boff(s|ed|ing)? (my|your|them|him|her|ones|one[’]s) ?sel(f|ves)',
+    "make a noose",
+    "sue [ai] [sc]ide",
+    '\bkms\b',
+    "least painful way to",
+    "die in a pain(less|ful)",
+    '\bcom+it+(ing|ed) [s$]',
+    "I don’t feel like living",
+    "(how|way) to die",
+    "How long does it take to die",
+    '^(?=.*\bdie\b)(?=.*\bpain(ful|less)\b).*$',
+    'Does it hurt to (OD\b|overdose|drown)',
+    "would.{1,40}kill (you|someone|me)",
+    "to kill me",
+    "is it (possible|likely|guaranteed) to die from",
+    "(don[’]t|do not) want to live(?! (near|with (a|my)? ?(roommate|parent)|in an?.{1,10}apartment))",
+    "stop living(?! (in fear|near|with (a|my)? ?(roommate|parent)|in an?.{1,10}apartment))",
+    "(what[’]s|what is|whats|I don[’]t see) the point of ((my )?life|living|going on if)",
+    '(how (many|much)|number of)(?! adults| people| children).{1,50}(\bOD\b|over ?dose|\bdie(s|d)?\b|lethal|\bkill|death|to die\b)',
+    "sewer ?[sc]l?ide", ##Sewer slide and Sewer cide both used to get around filters
+    'cause me to (OD|overdose)\b',
+    '(\bOD|overdose) on (morphine)',
+    "(leaving|quitting|exiting) this world",
+    "(instantly|painlessly) kill (you|me)",
+    "painless and quick",
+    "quick and painless",
+    "Will I suffer (from|if)",
+    "right to die",
+    "Take to kill you",
+    "feel like i have nothing left",
+    "k://",
+    "how.{1,10}(get|buy).{1,20}pure nitrogen",
+    "(would|will) (you|I|someone) (feel (any )?pain|survive) if",
+    '\bsui\*\*',
+    "(painless|least painful) way",
+    "(ready|want|going) to top myself",
+    "self[- ]elimination",
+    '(Is|Would).{10,60}(deadly|fatal)\?',
+    "cyanide( pill)?",
+    "k(y|m)(s|5)",
+    "(stab|shoot) (their|them|my|(yo)?ur|hi[sm]|her|ones|one[’]s)(sel(f|ves))?",
+    "(have left|nothing) to live for",
+    "way to cut myself",
+  ]
 action: filter
 priority: 2
 action_reason: "SUICIDE WATCH | Might be depressed or suicidal [{{match}}]"
 
 ---
-
 # Suicide watch 2
 type: submission
 title+body (includes, regex): [
-  '\b[s$z5](\.)?(u+|oo|\/)(\.)? ?[ei*•1l!-]?(\.)?[cs*•¢çÇ-](\.)?[i*•1l!=](\.)?d(\.)?([e*•3€εęéèêë]|[a*•478@àáâãäåαɚ](\.)?[l1]|[l1](\.)?e|[i*•1l!]ng)(?!( squad|boy$| ?by ?words))',
-  #Should probably exclude 'career suicide'
-  '\b(end(ing|ed)?s?|tak(e|ing)s?|took|discontinued?s?|terminated?s?|ceas(ed?s?|ing)|quit(ting)?s?|stop(ping)?s?) (to )?(their|my|your|his|her|ones|one''s|own)?( own)? (life|lives|consciousness|existence|living)',
-  '\b(cuts?(ting)?|slits?(ting)?|slice?s?(ing)?|slash(es|ing)?) (their|my|your|his|her|ones|one''s|own)( own)? (wrists?|throat)',
-  '(euthanize?(s|ed|ing)?|kill(s|ed|ing)?|hang(s|ed|ing)?|terminate?(s|d|ing)?|murd[eu]r(s|ed|ing)?) (my|(yo)?ur|them|our|him|her|ones|one['']s) ?sel(f|ves)',
-  '(want to|wanna|going to) km(s|5)\b',
-  'how do I desensitize myself to my own death',
-  '(quick(est)?|reliable|best|fast(est)?|painful|painless|eas(y|iest)|peaceful).{2,30}(to end.{1,10}life|over ?dose|to OD\b|to die\b|dying|death|pass away)',
-  'to die (without (feeling )?pain|painlessly|peacefully|quickly|with the least)',
-  '(why should I|reason (to|why I should|why should I)) (not die|(continue|go on|stay) (living|alive))',
-  '(guarantee|ensure|for) (their|my|your|his|her|ones|one['']s|a(n)?) ?(instant|painless|fast|quick)? death',
-  'how to die (quickly|painlessly|fast|instantly|quietly)',
-  'plan to die\b',
-  'how (painful|quick|fast|reliable|guaranteed) is it to overdose',
-  'is (dying|death) by.{1,35}(painful|quick|fast|reliable|guaranteed)',
-  'guaranteed (they|you|I|he|she) will die',
-  '(drowning|death) be painless',
-  'my death (painless|quick|fast|instant|guaranteed)',
-  #Specific Methods
-  'how.{1,20}ties? (a )?nooses?',
-  'throw a (toaster|heater).{1,20}in(to)? (the|a) bath',
-  'bullet in my (head|mouth|face|brain)',
-  '(shoot|stabb)ing (my|your)self in the (head|mouth|face|brain|heart)',
-  'thinking about (shoot|stabb)ing myself',
-  '(how (many|much)|number of).{1,20}(pills|tablets).{1,50}(\bOD\b|over ?dose|\bdie|lethal|\bkill|death|to die)',
-  #Euphemisms
-  'my.{1,10}forever sleep',
-  'toaster bath',
-  'committing my( )?self to the eternal abyss',
-  '\beat a bullet',
-  'sep+uk+u', #Japanese ritual suicide
-  'un[ -]?alive (your|my|him|her|them)sel(f|ves)',
-  #Die
-  '\bd[!#*•1l!][e!#¥*•3€ęéèêë]d?\b',
-  '\bd[i!#*•1l!][!#¥*•3€ęéèêë]d?\b',
-  '\bd[!#¥*•3€ęéèêë][a!#*•478@àáâãäåαɚ]th',
-  '\bd[e!#¥*•3€ęéèêë][!#*•478@àáâãäåαɚ]th',
-  #Kill
-  '(k|\|<)[^A-Za-z]?[!#*•1l!][^A-Za-z]?[l1||][^A-Za-z]?[l1||]',
-  '(k|\|<)[^A-Za-z]?[i!#*•1l!][^A-Za-z]?[1||][^A-Za-z]?[1||]',
-  '\|<[^A-Za-z]?[i!#*•1l!][^A-Za-z]?[l1||][^A-Za-z]?[l1||]',
-  #Suicide
-  '\bsu-+ide\b',
-  #Painless
-  'p[!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][s$z][s$z]',
-  'p[a!#*•478@àáâãäåαɚ][!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][s$z][s$z]',
-  'p[a!#*•478@àáâãäåαɚ][i!#*•1l!]ñl[e!#¥*•3€εęéèêë][s$z][s$z]',
-  'p[a!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[!#¥*•3€εęéèêë][s$z][s$z]',
-  'p[a!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][$z][s$z]',
-  'p[a!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][s$z][$z]',
-  #Commit
-  'c[*•0ø@]mmit',
-]
+    '\b[s$z5](\.)?(u+|oo|\/)(\.)? ?[ei*•1l!-]?(\.)?[cs*•¢çÇ-](\.)?[i*•1l!=](\.)?d(\.)?([e*•3€εęéèêë]|[a*•478@àáâãäåαɚ](\.)?[l1]|[l1](\.)?e|[i*•1l!]ng)(?!( squad|boy$| ?by ?words))',
+    #Should probably exclude 'career suicide'
+    '\b(end(ing|ed)?s?|tak(e|ing)s?|took|discontinued?s?|terminated?s?|ceas(ed?s?|ing)|quit(ting)?s?|stop(ping)?s?) (to )?(their|my|your|his|her|ones|one''s|own)?( own)? (life|lives|consciousness|existence|living)',
+    '\b(cuts?(ting)?|slits?(ting)?|slice?s?(ing)?|slash(es|ing)?) (their|my|your|his|her|ones|one''s|own)( own)? (wrists?|throat)',
+    "(euthanize?(s|ed|ing)?|kill(s|ed|ing)?|hang(s|ed|ing)?|terminate?(s|d|ing)?|murd[eu]r(s|ed|ing)?) (my|(yo)?ur|them|our|him|her|ones|one[']s) ?sel(f|ves)",
+    '(want to|wanna|going to) km(s|5)\b',
+    "how do I desensitize myself to my own death",
+    '(quick(est)?|reliable|best|fast(est)?|painful|painless|eas(y|iest)|peaceful).{2,30}(to end.{1,10}life|over ?dose|to OD\b|to die\b|dying|death|pass away)',
+    "to die (without (feeling )?pain|painlessly|peacefully|quickly|with the least)",
+    "(why should I|reason (to|why I should|why should I)) (not die|(continue|go on|stay) (living|alive))",
+    "(guarantee|ensure|for) (their|my|your|his|her|ones|one[']s|a(n)?) ?(instant|painless|fast|quick)? death",
+    "how to die (quickly|painlessly|fast|instantly|quietly)",
+    'plan to die\b',
+    "how (painful|quick|fast|reliable|guaranteed) is it to overdose",
+    "is (dying|death) by.{1,35}(painful|quick|fast|reliable|guaranteed)",
+    "guaranteed (they|you|I|he|she) will die",
+    "(drowning|death) be painless",
+    "my death (painless|quick|fast|instant|guaranteed)",
+    #Specific Methods
+    "how.{1,20}ties? (a )?nooses?",
+    "throw a (toaster|heater).{1,20}in(to)? (the|a) bath",
+    "bullet in my (head|mouth|face|brain)",
+    "(shoot|stabb)ing (my|your)self in the (head|mouth|face|brain|heart)",
+    "thinking about (shoot|stabb)ing myself",
+    '(how (many|much)|number of).{1,20}(pills|tablets).{1,50}(\bOD\b|over ?dose|\bdie|lethal|\bkill|death|to die)',
+    #Euphemisms
+    "my.{1,10}forever sleep",
+    "toaster bath",
+    "committing my( )?self to the eternal abyss",
+    '\beat a bullet',
+    "sep+uk+u", #Japanese ritual suicide
+    "un[ -]?alive (your|my|him|her|them)sel(f|ves)",
+    #Die
+    '\bd[!#*•1l!][e!#¥*•3€ęéèêë]d?\b',
+    '\bd[i!#*•1l!][!#¥*•3€ęéèêë]d?\b',
+    '\bd[!#¥*•3€ęéèêë][a!#*•478@àáâãäåαɚ]th',
+    '\bd[e!#¥*•3€ęéèêë][!#*•478@àáâãäåαɚ]th',
+    #Kill
+    '(k|\|<)[^A-Za-z]?[!#*•1l!][^A-Za-z]?[l1||][^A-Za-z]?[l1||]',
+    '(k|\|<)[^A-Za-z]?[i!#*•1l!][^A-Za-z]?[1||][^A-Za-z]?[1||]',
+    '\|<[^A-Za-z]?[i!#*•1l!][^A-Za-z]?[l1||][^A-Za-z]?[l1||]',
+    #Suicide
+    '\bsu-+ide\b',
+    #Painless
+    "p[!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][s$z][s$z]",
+    "p[a!#*•478@àáâãäåαɚ][!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][s$z][s$z]",
+    "p[a!#*•478@àáâãäåαɚ][i!#*•1l!]ñl[e!#¥*•3€εęéèêë][s$z][s$z]",
+    "p[a!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[!#¥*•3€εęéèêë][s$z][s$z]",
+    "p[a!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][$z][s$z]",
+    "p[a!#*•478@àáâãäåαɚ][i!#*•1l!][nñ]l[e!#¥*•3€εęéèêë][s$z][$z]",
+    #Commit
+    "c[*•0ø@]mmit",
+  ]
 action: filter
 action_reason: "SUICIDE WATCH | Probably suicidal [{{match}}]"
 priority: 3
 comment: |
   Hello, /u/{{author}}! Unfortunately, questions about suicide are not allowed. 
   **Asking how to kill yourself is never allowed on Reddit.** Trying to get around this filter will get you banned.
-  
+
   * If you are struggling with feelings of [depression](/r/depression), with 
   [suicidal thoughts](https://d3mh72llnfrpe6.cloudfront.net/wp-content/uploads/2018/06/26212058/cwst.pdf), 
   or if you're just having a really tough time, **we encourage you to [talk to someone](https://www.imalive.org/) and 
@@ -476,348 +497,344 @@ comment: |
   in different countries) you can try asking on /r/morbidquestions. Keep in mind that *questions about how to kill 
   yourself are banned there* (like everywhere on Reddit)!
   * Interested in the psychology behind why people commit suicide or have intrusive thoughts? You can ask on /r/psychopathology.
-  
+
   Your question has been removed pending review by a moderator.  You may get a second removal message depending on what 
   the outcome of that review is.
-  
+
   Thank you.
 
 ---
-
 # MEDICAL 1: May be asking for medical advice
 type: submission
-title (includes, regex): [
-  'hypochondriac',
-  'overdose',
-  'doctor said',
-  'sharp pain',
-  'Should I get checked',
-  'feel dizzy',
-  'I.{1,15}(unable|can[’]t|don[’]t want).{1,15}(go to|see|pay|afford).{1,15}(doctor|hospital)',
-  '(\d\d ?mc?g (of )?)?(antibiotics|paracetamol|biotin|melatonin|hydroxyzine|doxycycline|tramadol|sertraline|vyvanse|duloxetine|adderall|Clindamycin|Ceftinex|Cefdinir|etizolam)',
-  'medical (question|problem|advice|help|treatment|assistance)',
-  'My (finger|toe|arm|hand|foot|cheek|lip|ear)s? (is|are) swollen',
-  'blood.{1,30}(stool|cough|poo)',
-  '(stool|cough|poo).{1,30}blood',
-  'safe to drink (alcohol )?while taking',
-]
+title (includes, regex):
+  [
+    "hypochondriac",
+    "overdose",
+    "doctor said",
+    "sharp pain",
+    "Should I get checked",
+    "feel dizzy",
+    "I.{1,15}(unable|can[’]t|don[’]t want).{1,15}(go to|see|pay|afford).{1,15}(doctor|hospital)",
+    '(\d\d ?mc?g (of )?)?(antibiotics|paracetamol|biotin|melatonin|hydroxyzine|doxycycline|tramadol|sertraline|vyvanse|duloxetine|adderall|Clindamycin|Ceftinex|Cefdinir|etizolam)',
+    "medical (question|problem|advice|help|treatment|assistance)",
+    "My (finger|toe|arm|hand|foot|cheek|lip|ear)s? (is|are) swollen",
+    "blood.{1,30}(stool|cough|poo)",
+    "(stool|cough|poo).{1,30}blood",
+    "safe to drink (alcohol )?while taking",
+  ]
 action: report
-action_reason: "RULE 6 | Low to mid possibility: MEDICAL advice question [{{match}}]"
+action_reason: "Low to mid possibility: MEDICAL advice question [{{match}}]"
 
 ---
-
 # MEDICAL 2: Probably asking for medical advice
 type: submission
-title+body (includes, regex): [
-  '((should I|I should|I might|I need to|I can(not|n''t) afford to|I forgot to) (be )?(see(ing)?|ask(ing)?|go(ing)? (to|see))|Do I need|Is it worth) (a|the|my)? (different )??(doc(tor)??\b|\bdr\b|hospital|clinic|psychiatrist|gynecologist|obstetrician|urologist|neurologist|\bER\b|emergency room|tetanus shot|cardiologist|proctologist|dermatologist|Urgent Care|Emergency Room|Primary Care)',
-  'should I get tested for',
-  'should I get checked out',
-  'am I dying',
-  'am I having an? (stroke|(heart|anxiety|panic) attack)',
-  'How (can|do) I make myself (vomit|sick|throw up)',
-  '(Do (you think )?|Is it possible )I have (an? )?(strep|cancer|HIV|AIDS|autism|OCD|schizophrenia|depression|herpes|lyme disease|strep|diabetes|covid|the flu|lupus|ALS|gastritis|infection|listeria|food poisoning|pneumonia|bronchitis|mental illness|tinnitus|eating disorder|anorexia|kidney stones?|UTI\b|Covid|concussion)',
-  'Does this (look( like)?|appear).{1,10}(cancer|infect(ed|ion))',
-  'Is my.{1,10}(tattoo|cut|wound|arm|hand|shoulder|finger) infected',
-  'I know this (isn’t|isnt) a medical (advice )?subreddit.{1,2}but',
-  'how bad does this (infection|wound|rash) look',
-  'does this (infection|wound|rash) look serious',
-  'Is this a (cold sore)',
-  'Should I (cut|chop) off my (penis|finger|arm|leg|toe|foot|hand|nose|ear|testicles)',
-  'burns?(ing)? when I (pee|go to the bathroom|go pee|urinate)',
-  'Is there a(ny)? way to stop (having )?(seizures|panic attacks|heart attacks)',
-  '(I|We) need (medical|a doctor''s) advice',
-  'What (do|should) I do about an? (infection|(broken|fractured) (leg|arm|finger|toe|bone))',
-  'I''m (slowly )?losing my vision',
-  'the (safest|highest).{1,10}dose I can',
-  'why is my (throw ?up|vomit|poop?|fa?eces|shit) black',
-  'should I? ?get (my|this) (heart|arm|bruise|leg|lungs|throat|tooth|rash|cut|wound|infection|burn) (checked out|looked at)',
-  'I ?(am|[’]m|have been|[’]ve been|keep)? (also )?(experienc(e|ing)|feel(ing)?|suffer(ing)?|hav(e|ing)|get(ting)?).{1,10}(chest pain|heart pain|urinary issues|sharp pain in my)',
-  'pain in my (chest|balls|arm|leg|stomach|abdomen)',
-  '(sharp|shooting) pains? (in|from) (the )?(my|right|left)',
-  'Do(es)? (it|I) need stitches',
-  'How do I get.{1,20}out of my urethra',
-  'I think I broke my (leg|arm|foot|toe|hand|bone|jaw|skull)',
-  'Should I take antibiotics',
-  'How much (antibiotics|paracetamol|biotin|melatonin|hydroxyzine|doxycycline|tramadol|sertraline|vyvanse|duloxetine|adderall|Clindamycin|Ceftinex|Cefdinir|etizolam) should I take',
-  'it hurts to (blink|breathe|lift|raise|walk)',
-  'my (left|right)? ?(testicle|finger|ear|leg|arm|hand|foot|ankle|toe)s? (feels|looks|is|are) swollen',
-  'swollen (lymph node)',
-  'blood on the toilet paper',
-]
+title+body (includes, regex):
+  [
+    '((should I|I should|I might|I need to|I can(not|n''t) afford to|I forgot to) (be )?(see(ing)?|ask(ing)?|go(ing)? (to|see))|Do I need|Is it worth) (a|the|my)? (different )??(doc(tor)??\b|\bdr\b|hospital|clinic|psychiatrist|gynecologist|obstetrician|urologist|neurologist|\bER\b|emergency room|tetanus shot|cardiologist|proctologist|dermatologist|Urgent Care|Emergency Room|Primary Care)',
+    "should I get tested for",
+    "should I get checked out",
+    "am I dying",
+    "am I having an? (stroke|(heart|anxiety|panic) attack)",
+    "How (can|do) I make myself (vomit|sick|throw up)",
+    '(Do (you think )?|Is it possible )I have (an? )?(strep|cancer|HIV|AIDS|autism|OCD|schizophrenia|depression|herpes|lyme disease|strep|diabetes|covid|the flu|lupus|ALS|gastritis|infection|listeria|food poisoning|pneumonia|bronchitis|mental illness|tinnitus|eating disorder|anorexia|kidney stones?|UTI\b|Covid|concussion)',
+    "Does this (look( like)?|appear).{1,10}(cancer|infect(ed|ion))",
+    "Is my.{1,10}(tattoo|cut|wound|arm|hand|shoulder|finger) infected",
+    "I know this (isn’t|isnt) a medical (advice )?subreddit.{1,2}but",
+    "how bad does this (infection|wound|rash) look",
+    "does this (infection|wound|rash) look serious",
+    "Is this a (cold sore)",
+    "Should I (cut|chop) off my (penis|finger|arm|leg|toe|foot|hand|nose|ear|testicles)",
+    "burns?(ing)? when I (pee|go to the bathroom|go pee|urinate)",
+    "Is there a(ny)? way to stop (having )?(seizures|panic attacks|heart attacks)",
+    "(I|We) need (medical|a doctor's) advice",
+    "What (do|should) I do about an? (infection|(broken|fractured) (leg|arm|finger|toe|bone))",
+    "I'm (slowly )?losing my vision",
+    "the (safest|highest).{1,10}dose I can",
+    "why is my (throw ?up|vomit|poop?|fa?eces|shit) black",
+    "should I? ?get (my|this) (heart|arm|bruise|leg|lungs|throat|tooth|rash|cut|wound|infection|burn) (checked out|looked at)",
+    "I ?(am|[’]m|have been|[’]ve been|keep)? (also )?(experienc(e|ing)|feel(ing)?|suffer(ing)?|hav(e|ing)|get(ting)?).{1,10}(chest pain|heart pain|urinary issues|sharp pain in my)",
+    "pain in my (chest|balls|arm|leg|stomach|abdomen)",
+    "(sharp|shooting) pains? (in|from) (the )?(my|right|left)",
+    "Do(es)? (it|I) need stitches",
+    "How do I get.{1,20}out of my urethra",
+    "I think I broke my (leg|arm|foot|toe|hand|bone|jaw|skull)",
+    "Should I take antibiotics",
+    "How much (antibiotics|paracetamol|biotin|melatonin|hydroxyzine|doxycycline|tramadol|sertraline|vyvanse|duloxetine|adderall|Clindamycin|Ceftinex|Cefdinir|etizolam) should I take",
+    "it hurts to (blink|breathe|lift|raise|walk)",
+    "my (left|right)? ?(testicle|finger|ear|leg|arm|hand|foot|ankle|toe)s? (feels|looks|is|are) swollen",
+    "swollen (lymph node)",
+    "blood on the toilet paper",
+  ]
 action: filter
 action_reason: "Mid to high possibility: MEDICAL advice question [{{match}}]"
 
 ---
-
 # MEDICAL 3 (REMOVED): Asking for medical advice
 type: submission
-title (includes, regex): [
-  '((should I|I should|I might|I need to|I can(not|n''t) afford to|I forgot to) (see|ask|go (to|see))|Do I need|Is it worth) (an?|the|my)? (different )??(doc(tor)??\b|\bdr\b|hospital|clinic|psychiatrist|gynecologist|obstetrician|urologist|neurologist|\bER\b|emergency room|tetanus shot|cardiologist|proctologist|dermatologist|Urgent Care|Emergency Room|Primary Care)',
-  'should I get tested for',
-  'should I get checked out',
-  'am I dying',
-  '(am I having|did I (just )?have) an? (stroke|(heart|anxiety|panic) attack)',
-  'How (can|do) I make myself (vomit|sick|throw up)',
-  '(Do (you think )?|Is it possible )I have (an? )?(strep|cancer|HIV|AIDS|autism|OCD|schizophrenia|depression|herpes|lyme disease|strep|diabetes|covid|the flu|lupus|ALS|gastritis|infection|listeria|food poisoning|pneumonia|bronchitis|mental illness|tinnitus|eating disorder|anorexia|kidney stones?|UTI\b|Covid|concussion)',
-  'Does this (look( like)?|appear).{1,10}(cancer|infect(ed|ion))',
-  'Is my.{1,10}(tattoo|cut|wound|arm|hand|shoulder|finger) infected',
-  'I know this (isn’t|isnt) a medical (advice )?subreddit.{1,2}but',
-  'how bad does this (infection|wound|rash) look',
-  'does this (infection|wound|rash) look serious',
-  'Should I (cut|chop) off my (penis|finger|arm|leg|toe|foot|hand|nose|ear|testicles)',
-  'burns?(ing)? when I (pee|go to the bathroom|go pee|urinate)',
-  'Is there a(ny)? way to stop (having )?(seizures|panic attacks|heart attacks)',
-  '(I|We) need (medical|a doctor''s) advice',
-  'What (do|should) I do about an? (infection|(broken|fractured) (leg|arm|finger|toe|bone))',
-  'I''m (slowly )?losing my vision',
-  'the (safest|highest).{1,10}dose I can',
-  'why is my (throw ?up|vomit|poop?|fa?eces|shit) black',
-  'should I? ?get (my|this) (heart|arm|bruise|leg|lungs|throat|tooth|rash|cut|wound|infection|burn) (checked out|looked at)',
-  'I ?(am|[’]m|have been|[’]ve been|keep)? (experienc(e|ing)|feel(ing)?|suffer(ing)?|hav(e|ing)|get(ting)?).{1,10}(chest pain|urinary issues|sharp pain in my)',
-  'pain in my chest',
-  'Do(es)? (it|I) need stitches',
-  'How do I get.{1,20}out of my urethra',
-  'I think I broke my (leg|arm|foot|toe|hand|bone|jaw|skull)',
-  'Should I take antibiotics',
-  'How much (antibiotics|paracetamol|biotin|melatonin|hydroxyzine|doxycycline|tramadol|sertraline|vyvanse|duloxetine|adderall|Clindamycin|Ceftinex|Cefdinir|etizolam) should I take',
-  'it hurts to (blink|breathe|lift|raise|walk)',
-  'my (left|right)? ?(testicle|finger|ear|leg|arm|hand|foot|ankle|toe)s? (feels|looks|is|are) swollen',
-  'swollen (lymph node)',
-  'heart palpitations',
-]
+title (includes, regex):
+  [
+    '((should I|I should|I might|I need to|I can(not|n''t) afford to|I forgot to) (see|ask|go (to|see))|Do I need|Is it worth) (an?|the|my)? (different )??(doc(tor)??\b|\bdr\b|hospital|clinic|psychiatrist|gynecologist|obstetrician|urologist|neurologist|\bER\b|emergency room|tetanus shot|cardiologist|proctologist|dermatologist|Urgent Care|Emergency Room|Primary Care)',
+    "should I get tested for",
+    "should I get checked out",
+    "am I dying",
+    "(am I having|did I (just )?have) an? (stroke|(heart|anxiety|panic) attack)",
+    "How (can|do) I make myself (vomit|sick|throw up)",
+    '(Do (you think )?|Is it possible )I have (an? )?(strep|cancer|HIV|AIDS|autism|OCD|schizophrenia|depression|herpes|lyme disease|strep|diabetes|covid|the flu|lupus|ALS|gastritis|infection|listeria|food poisoning|pneumonia|bronchitis|mental illness|tinnitus|eating disorder|anorexia|kidney stones?|UTI\b|Covid|concussion)',
+    "Does this (look( like)?|appear).{1,10}(cancer|infect(ed|ion))",
+    "Is my.{1,10}(tattoo|cut|wound|arm|hand|shoulder|finger) infected",
+    "I know this (isn’t|isnt) a medical (advice )?subreddit.{1,2}but",
+    "how bad does this (infection|wound|rash) look",
+    "does this (infection|wound|rash) look serious",
+    "Should I (cut|chop) off my (penis|finger|arm|leg|toe|foot|hand|nose|ear|testicles)",
+    "burns?(ing)? when I (pee|go to the bathroom|go pee|urinate)",
+    "Is there a(ny)? way to stop (having )?(seizures|panic attacks|heart attacks)",
+    "(I|We) need (medical|a doctor's) advice",
+    "What (do|should) I do about an? (infection|(broken|fractured) (leg|arm|finger|toe|bone))",
+    "I'm (slowly )?losing my vision",
+    "the (safest|highest).{1,10}dose I can",
+    "why is my (throw ?up|vomit|poop?|fa?eces|shit) black",
+    "should I? ?get (my|this) (heart|arm|bruise|leg|lungs|throat|tooth|rash|cut|wound|infection|burn) (checked out|looked at)",
+    "I ?(am|[’]m|have been|[’]ve been|keep)? (experienc(e|ing)|feel(ing)?|suffer(ing)?|hav(e|ing)|get(ting)?).{1,10}(chest pain|urinary issues|sharp pain in my)",
+    "pain in my chest",
+    "Do(es)? (it|I) need stitches",
+    "How do I get.{1,20}out of my urethra",
+    "I think I broke my (leg|arm|foot|toe|hand|bone|jaw|skull)",
+    "Should I take antibiotics",
+    "How much (antibiotics|paracetamol|biotin|melatonin|hydroxyzine|doxycycline|tramadol|sertraline|vyvanse|duloxetine|adderall|Clindamycin|Ceftinex|Cefdinir|etizolam) should I take",
+    "it hurts to (blink|breathe|lift|raise|walk)",
+    "my (left|right)? ?(testicle|finger|ear|leg|arm|hand|foot|ankle|toe)s? (feels|looks|is|are) swollen",
+    "swollen (lymph node)",
+    "heart palpitations",
+  ]
 action: remove
 priority: 3
-action_reason: "RULE 6 | Post removed: MEDICAL advice question [{{match}}]"
+action_reason: "Post removed: MEDICAL advice question [{{match}}]"
 comment: |
   Hello /u/{{author}}! Thanks for your submission to /r/{{subreddit}}! Unfortunately, our Automoderator thinks it's a medical question and so has removed it (sorry!). This sub doesn't allow medical questions. There's a danger that someone with a similar problem could see your question and follow the advice they find in it - even if you're not explicitly asking for advice - and that advice, *given by random strangers on the Internet*, could have disastrous consequences. 
-  
+
   **If you are in a medical emergency, contact emergency services (911, 999, 112, etc depending on your country).**  Not an emergency? We recommend you ask your doctor. But if you want to ask on Reddit, there are some options.
-  
+
   * /r/AskDocs and /r/Medical will answer medical questions as long as you follow their rules.
-  
+
   * /r/AskDentists answers questions about dental problems.
-  
+
   * /r/AskVet answers medical questions for pets.    
-  
+
   If this *isn't* a medical question, let us know in modmail and we'll evaluate it to see if it should be put through. Thanks!
 
 ---
-
 # NSFW FILTERS
-
 ---
-
 type: submission
-title+body (includes-word, regex): [
-  'swallow (cum|semen|sperm|ejaculate|jizz)',
-  '(cum|semen|sperm|ejaculate|jizz)',
-  'horn(e)?y',
-  'make me(.*)(gay|lesbian|bi(sexual)?)',
-  'can(.*)have ((a )?kinks?)',
-  'watch(.*)porn',
-  'is rape',
-  'rainbow kiss',
-  'is \d{1,2} ?(in|cm|mm|inches|centimeters) (big|small|tiny|large|huge|sexy|micro|mini)',
-  'rap(e|ing) (you|me|them|him|her)',
-  '(cut|sever|break|chop|rip|tear)( off)? (an|your|my) (artery|vein)',
-  'porn(o|ography)? (site|website|page|online|sauce|source)',
-  '(cum|ejaculate|jizz) (on|in|at|near) (someone|you|myself|me|them|him|her)',
-  'use (a|my|her|their) tampon',
-  '(let|watch|don''?t stop) (them|him|her) (from )?(di(e|ying)|being (killed|raped|molested|groped|kidnapped|abused|attacked))',
-  '(pp|penis|ball|penis|sausage|dick|cock|vaj|vag(ina)?|pussy|tit|breast|boob|melons|clit|foreskin|uretha|vulva|honker|m(u|o)mmy milker)''?s? (size|length|girth|weight|mass|volume|capacity)',
-  '(I am|am I)(.*)a virgin',
-  'Is(.*)gay\?',
-  '(touching|feeling|grasping|groping|licking|sucking|slapping|fucking) (pp|penis|ball|penis|sausage|dick|cock|vaj|vag(ina)?|pussy|tit|breast|boob|melons|clit|foreskin|uretha|vulva|honker|m(u|o)mmy milker|tip)''?s?',
-  'do I have (a|an)? (.*){10} (infection|cancer|disease|std|uti|sti)',
-  '(can i|is it (legal|allowed|possible)|am I (able|allowed)( to)?) (remove|cut|sever|snip|chop|tear|rip|break)( off)? (her|his|someone(''s)?|their|it(''s)?)',
-  '(jacking off|ejaculat(e|ing)|jizz(ing)?) to',
-  'yiff',
-  'sexually attracted to',
-  'why (are|is) (.*){10} (so )?(sexy|attractive|sexual|pleasing)'
-]
+title+body (includes-word, regex):
+  [
+    "swallow (cum|semen|sperm|ejaculate|jizz)",
+    "(cum|semen|sperm|ejaculate|jizz)",
+    "horn(e)?y",
+    "make me(.*)(gay|lesbian|bi(sexual)?)",
+    "can(.*)have ((a )?kinks?)",
+    "watch(.*)porn",
+    "is rape",
+    "rainbow kiss",
+    'is \d{1,2} ?(in|cm|mm|inches|centimeters) (big|small|tiny|large|huge|sexy|micro|mini)',
+    "rap(e|ing) (you|me|them|him|her)",
+    "(cut|sever|break|chop|rip|tear)( off)? (an|your|my) (artery|vein)",
+    "porn(o|ography)? (site|website|page|online|sauce|source)",
+    "(cum|ejaculate|jizz) (on|in|at|near) (someone|you|myself|me|them|him|her)",
+    "use (a|my|her|their) tampon",
+    "(let|watch|don'?t stop) (them|him|her) (from )?(di(e|ying)|being (killed|raped|molested|groped|kidnapped|abused|attacked))",
+    "(pp|penis|ball|penis|sausage|dick|cock|vaj|vag(ina)?|pussy|tit|breast|boob|melons|clit|foreskin|uretha|vulva|honker|m(u|o)mmy milker)'?s? (size|length|girth|weight|mass|volume|capacity)",
+    "(I am|am I)(.*)a virgin",
+    'Is(.*)gay\?',
+    "(touching|feeling|grasping|groping|licking|sucking|slapping|fucking) (pp|penis|ball|penis|sausage|dick|cock|vaj|vag(ina)?|pussy|tit|breast|boob|melons|clit|foreskin|uretha|vulva|honker|m(u|o)mmy milker|tip)'?s?",
+    "do I have (a|an)? (.*){10} (infection|cancer|disease|std|uti|sti)",
+    "(can i|is it (legal|allowed|possible)|am I (able|allowed)( to)?) (remove|cut|sever|snip|chop|tear|rip|break)( off)? (her|his|someone('s)?|their|it('s)?)",
+    "(jacking off|ejaculat(e|ing)|jizz(ing)?) to",
+    "yiff",
+    "sexually attracted to",
+    "why (are|is) (.*){10} (so )?(sexy|attractive|sexual|pleasing)",
+  ]
 action: filter
-action_reason: "RULE 4 | NSFW filter [{{match}}]"
+action_reason: "NSFW filter [{{match}}]"
 
 ---
-
 type: submission
 title+body (includes-word, regex): [
-  # (Same as your full flagged NSFW list – preserved fully)
-  'cocaine',
-  '\bheroin\b',
-  '\bpen.s(es)?\b',
-  '\bp.nis(es)?\b',
-  '\bcock\b',
-  '\b(my|his|its|her|suck(ing)?) d[i1*]ck\b',
-  '\bd.ck (size|pic|cheese)',
-  '\bpp\b',
-  'pee ?pee',
-  '\bboners?\b',
-  'circumci',
-  'testicles?',
-  'ballsack',
-  '\bsemen\b',
-  'sperm\b(?!(whale|donor))',
-  '\bcum\b',
-  'nutted',
-  '\bv[ai]ginal?\b',
-  'beef curtains',
-  '\bclit(oris)?',
-  'hymen',
-  'period blood',
-  '(her|their) (tits|boobs|breasts)\b',
-  'titt(ie|ay)s?',
-  '\bpussy(?! cat)\b',
-  'his bussy\b',
-  '(massive|huge|my|his) erection',
-  'foreskin',
-  'smegma',
-  'pubic (hair|area)',
-  '\bpubes?\b',
-  '(get|sport|have|show) (an|my|his) erection',
-  'morning wood',
-  '\blabia\b',
-  'queef',
-  'get(ting)? turned on by',
-  'agehao',
-  'ahegao',
-  'masturbai?t',
-  '\bfap\b',
-  'j(er|ac)k(ing|s|ed)? off',
-  'beat(ing)? off',
-  '\bwank(ed|s|ing)\b',
-  'fleshlight',
-  '\bdildo(s)\b',
-  'autoerotic asphyxiation',
-  'sex toy',
-  'jilling off',
-  '(have|unprotected|had|having|during) (intercourse|s.x\b)',
-  'sex with',
-  'sexual relationship',
-  'intercourse with',
-  'getting fucked',
-  '(gay|lesbian|anal|oral|during) sex',
-  'los(e|ing)( my|your|her|his|their)? virginit(y|ies)',
-  '(want to|wanna|like to) fuck',
-  '\bsnu-?snu\b',
-  'doggy ?style',
-  'gets?(ting)? laid\b',
-  '(cowgirl|doggy|woman on top|man on top|the missionary) position',
-  '\bBBFS\b',
-  'virginity',
-  'foreplay',
-  '\bcondom(s)\b',
-  'Netflix and chill',
-  'blow ?job',
-  '\ba blowie\b',
-  'fellatio',
-  '\b(suck|your|my|his|her) d.ck\b',
-  '\bbj\b',
-  'cunnilingus',
-  'g[ia]v(e|ing) head',
-  '(eat|lick)(ing)? (my |his |her )?ass',
-  'rimjobs?',
-  'sodom(y|ize)',
-  '(during|have|had|having|unprotected) anal',
-  '\bejaculat(e|ion)s?',
-  '\borgasms?\b',
-  '\bcum(ming|s)?\b',
-  'jizz',
-  'penis',
-  'vagina',
-  'femboys',
-  'cum',
-  'porn',
-  'threesome',
-  'gang bangs?',
-  '\bp.rn\b',
-  '\bpo.n\b',
-  'pr0n',
-  'p.rn(ograph|star|hub)',
-  'hentai',
-  'rule ?34',
-  'nude pics',
-  'gonewild',
-  'nudes',
-  'sext',
-  'netvideogirls',
-  '\byiff\b',
-  'vipergirls',
-  '\b(xx)?x[- ]rated',
-  '\byaoi(guro)?\b',
-  'strip club',
-  'lap dance',
-  'sugar daddy',
-  'OnlyFans',
-  '\bUnfiltrd\b',
-  '\bhooke?rs?\b',
-  'prostitut(e|ion)',
-  'streetwalker',
-  'sex work',
-  '[^(man )][^-]wh[o*]re',
-  'brothel',
-  'lot lizard',
-  '\bkink(s|y)?\b',
-  'turns (me|her|them|him) on',
-  'bdsm',
-  '\bcuck(old)?(ing)?\b',
-  'bukkake',
-  'dominatrix',
-  '\bfuta(nari)?\b',
-  'incest kink',
-  'buttplug',
-  'felching',
-  'glory hole',
-  'mile high club',
-  'sluts?(?![- ]sham(e|ing))',
-  '(Asian|sexual) fetish',
-  'enjo kosai',
-  'futanari',
-  'netorare',
-  'paizuri',
-  '\byaoi\b',
-  '\bSTDs?\b',
-  '\bSTIs?\b',
-  '\br[a4@*]p([e3]|ist)s?d?\b',
-  '\bl[o0]l[i1]\b',
-  '\bpedo\b',
-  'pa?edophili?[eac]',
-  '\bshota(con)?\b',
-  'besti?ality',
-  'necrophili?[eac]',
-  '(two|2) girls (one|1) cup',
-  '(sexual|child|animal) (abus(er?s?|ing)|mol[e3*]st(ing|ation|[eo]rs?))',
-  'sexual harassment',
-  'human centipede',
-  '\bscat\b',
-  'jailbait',
-  'genital mutilation',
-  '\bFGM\b',
-  'buck breaking',
-  'lemon party',
-  'incest',
-  'snuff (film|movie|video)',
-  'eat(en|ing)? human flesh',
-  'red rooms?',
-  'wanting to (kill|torture)',
-  'violent urges?',
-  'sadism'
-]
+    # (Same as your full flagged NSFW list – preserved fully)
+    "cocaine",
+    '\bheroin\b',
+    '\bpen.s(es)?\b',
+    '\bp.nis(es)?\b',
+    '\bcock\b',
+    '\b(my|his|its|her|suck(ing)?) d[i1*]ck\b',
+    '\bd.ck (size|pic|cheese)',
+    '\bpp\b',
+    "pee ?pee",
+    '\bboners?\b',
+    "circumci",
+    "testicles?",
+    "ballsack",
+    '\bsemen\b',
+    'sperm\b(?!(whale|donor))',
+    '\bcum\b',
+    "nutted",
+    '\bv[ai]ginal?\b',
+    "beef curtains",
+    '\bclit(oris)?',
+    "hymen",
+    "period blood",
+    '(her|their) (tits|boobs|breasts)\b',
+    "titt(ie|ay)s?",
+    '\bpussy(?! cat)\b',
+    'his bussy\b',
+    "(massive|huge|my|his) erection",
+    "foreskin",
+    "smegma",
+    "pubic (hair|area)",
+    '\bpubes?\b',
+    "(get|sport|have|show) (an|my|his) erection",
+    "morning wood",
+    '\blabia\b',
+    "queef",
+    "get(ting)? turned on by",
+    "agehao",
+    "ahegao",
+    "masturbai?t",
+    '\bfap\b',
+    "j(er|ac)k(ing|s|ed)? off",
+    "beat(ing)? off",
+    '\bwank(ed|s|ing)\b',
+    "fleshlight",
+    '\bdildo(s)\b',
+    "autoerotic asphyxiation",
+    "sex toy",
+    "jilling off",
+    '(have|unprotected|had|having|during) (intercourse|s.x\b)',
+    "sex with",
+    "sexual relationship",
+    "intercourse with",
+    "getting fucked",
+    "(gay|lesbian|anal|oral|during) sex",
+    "los(e|ing)( my|your|her|his|their)? virginit(y|ies)",
+    "(want to|wanna|like to) fuck",
+    '\bsnu-?snu\b',
+    "doggy ?style",
+    'gets?(ting)? laid\b',
+    "(cowgirl|doggy|woman on top|man on top|the missionary) position",
+    '\bBBFS\b',
+    "virginity",
+    "foreplay",
+    '\bcondom(s)\b',
+    "Netflix and chill",
+    "blow ?job",
+    '\ba blowie\b',
+    "fellatio",
+    '\b(suck|your|my|his|her) d.ck\b',
+    '\bbj\b',
+    "cunnilingus",
+    "g[ia]v(e|ing) head",
+    "(eat|lick)(ing)? (my |his |her )?ass",
+    "rimjobs?",
+    "sodom(y|ize)",
+    "(during|have|had|having|unprotected) anal",
+    '\bejaculat(e|ion)s?',
+    '\borgasms?\b',
+    '\bcum(ming|s)?\b',
+    "jizz",
+    "penis",
+    "vagina",
+    "femboys",
+    "cum",
+    "porn",
+    "threesome",
+    "gang bangs?",
+    '\bp.rn\b',
+    '\bpo.n\b',
+    "pr0n",
+    "p.rn(ograph|star|hub)",
+    "hentai",
+    "rule ?34",
+    "nude pics",
+    "gonewild",
+    "nudes",
+    "sext",
+    "netvideogirls",
+    '\byiff\b',
+    "vipergirls",
+    '\b(xx)?x[- ]rated',
+    '\byaoi(guro)?\b',
+    "strip club",
+    "lap dance",
+    "sugar daddy",
+    "OnlyFans",
+    '\bUnfiltrd\b',
+    '\bhooke?rs?\b',
+    "prostitut(e|ion)",
+    "streetwalker",
+    "sex work",
+    "[^(man )][^-]wh[o*]re",
+    "brothel",
+    "lot lizard",
+    '\bkink(s|y)?\b',
+    "turns (me|her|them|him) on",
+    "bdsm",
+    '\bcuck(old)?(ing)?\b',
+    "bukkake",
+    "dominatrix",
+    '\bfuta(nari)?\b',
+    "incest kink",
+    "buttplug",
+    "felching",
+    "glory hole",
+    "mile high club",
+    "sluts?(?![- ]sham(e|ing))",
+    "(Asian|sexual) fetish",
+    "enjo kosai",
+    "futanari",
+    "netorare",
+    "paizuri",
+    '\byaoi\b',
+    '\bSTDs?\b',
+    '\bSTIs?\b',
+    '\br[a4@*]p([e3]|ist)s?d?\b',
+    '\bl[o0]l[i1]\b',
+    '\bpedo\b',
+    "pa?edophili?[eac]",
+    '\bshota(con)?\b',
+    "besti?ality",
+    "necrophili?[eac]",
+    "(two|2) girls (one|1) cup",
+    "(sexual|child|animal) (abus(er?s?|ing)|mol[e3*]st(ing|ation|[eo]rs?))",
+    "sexual harassment",
+    "human centipede",
+    '\bscat\b',
+    "jailbait",
+    "genital mutilation",
+    '\bFGM\b',
+    "buck breaking",
+    "lemon party",
+    "incest",
+    "snuff (film|movie|video)",
+    "eat(en|ing)? human flesh",
+    "red rooms?",
+    "wanting to (kill|torture)",
+    "violent urges?",
+    "sadism",
+  ]
 set_nsfw: true
 action: filter
-action_reason: "RULE 4 | NSFW filter [{{match}}]"
+action_reason: "NSFW filter [{{match}}]"
 
 ---
-
 ########################################################
-# Filter forbidden language - Possible Arguments 
+# Filter forbidden language - Possible Arguments
 ########################################################
 type: any
-title+body (regex): 
+title+body (regex):
   - '(?#go fuck..[yourself/etc.], go suck..)(?=go)(?<![\"“”‟„])(?<!Two Feet - )go ((?#fuck/frick/etc. when used as part of a phrase)(F+|P+h+|(?=Ef))(([UA4FO0E3I]+|V?(?=[ckq])|\\*[^UA4@O0E3IV\s](?=[ckq]{2,}))+([ckq]+|cuk|g(g|(?=i)))|(?#   )(?#F/Frick/etc.)(?!(?<=F)(reak|lip)\S* out)(?<=F)(r[iea]+([ck]+|(?<=i)g+)|lip)?|Ef+(?!f))(?<!\bFAQ)(?<!(?-i:\bF[A-Z]\b))(?<!(?-i:\b[FP][A-Z]{2}\b))[s5]?(?# << End of "fuck"  )|suck)(?! itself| Yourself([\"“”‟„]| by Two Feet))' # ("Go Fuck Yourself" is a song by two feet)
   - '(?#Fuck off/Fuck you/F yourself/fuck this/fuck OP/etc.)(?=F+|P+h+|Ef)(?<!(holy|said) )(?<!saying )(?<! [\-–−—] )(?#fuck when used as part of a phrase)(F+|P+h+|(?=Ef))(([UA4@O0E3I]+|V?(?=[ckq])|\\*[^UA4@O0E3IV\s](?=[ckq]{2,}))+([ckq]+|cuk|g(g|(?=i)))(?<!\bFAQ)|Ef+(?! this))(?# << End of "fuck"  )(?! you\W?re right| You\]| You by)(\.(?= \w+\b(?! \w)))? (?#        2nd Part >>)((?#   )(?=Off)(?<!the fuck )(?<!\bI fuck )(?<!\bI\Wll fuck )(?<!\bI\Wd fuck )(?<!would fuck )(?<!else can fuck )(?<!people can fuck )(?<!will fuck )(?<!(?-i:FCC) )Off(?! the\b)|(?#   )(?#You/your)(y+[o0u]+r*|u+r*)\b(?<!\b\w\WF\WU)(?!(?<=F\WU)\W\w\b|((?#are)[ ''‘’´`]?a?re?)?( \w+)? (good|right|correct|amazing|awesome|great))(?<!they fuck you)(\W?sel(f|ves))?|(?#   )Is wrong(?<!\bF Is wrong(?! wit?h))|(?#   )(?#This)(th|d)(is|(?<=th)s)(?![\"“”‟„''‘’´`]| (is|made|real+y|trul+y|actual+y|honestly|genuinely|easily|up))|(?#   )OP)' # ("F off/F this" is in the reporting section) )| the "(?<! [\-–−—] )" and "You\]" are for ignoring song titles [] the "(\.(?= \w+\b(?! \w)))?" is to match "Fuck. Off." [] The "(?<!\b\w\WF\WU)(?!(?<=F\WU)\W\w\b" is to ignore F U if it's part of something like F U N
   - '(?#screw off/screwoff/screw you/screw this)screw\W?(Off(?! the| an?\b)(?<!to screw off)|(?#You/your)(y+[o0u]+r*|u+r*)(\W?sel(f|ves))?(?<!they screw you)(?! up)|(?#This)(th|d)(is|(?<=th)s)(?!( part)? (off|up)| country|[\W_]+let[''‘’´`]?s)(?<!always screw this))'
-  - 'sod off'
+  - "sod off"
   - '(?#get fucked/get lost/etc.)(?=get)(?<!\bI )(?<!it (can|may) )(?<!will )(?<!(would|could|might) )(?<!\b[''‘’´`]ll )(?<!\b[''‘’´`]d )(?<!don\Wt wanna )(?<!don\Wt want to )(?<!how you )Get ((?#fucked)(F+|P+h+)([UA4@O0E3I]+|V?(?=[ckq])|\\*[^UA4@O0E3IV\s](?=[ckq]{2,}))+([ckq]+|cuk|g(g|(?=i)))(?#ed)[e3''‘’´`]?[dt](?! up)(?# << End of "fucked"  )|(?#shit)[s5$z]+h+([i1!¡jla]|(?!(eets?|iites?)\b)[i1!¡jle3]{2,})([t7]|(?<!a)z+|\\*[*_])e* on|(?# options only at end of sentences/etc. or with specific words after> )(bent(?<!n[o''‘’´`]t get bent)|w?re[ck]+[e3''‘’´`]?[dt]|wh?acked|(?<!to get )lost(?! in| with))(?![\"“”‟„''‘’´`]\B)((?! [a-z]|[\"“”‟„])| (my )?((wo)?man|dude|mate|m8|bro(ther)?|bruh|lady|(?#you/yo)(Y+[o0ua]+|U+)\b|and|or|tho(ugh)?)))'
   - '(?#suck it/suck me off)suck (it(?! \w)|me)'
   - '(?#eat shit/suck my balls/etc.)(?=(Suck|(?#Eat)E[ae]t(?!ing shit|\w* shit (off|on|from))|Drink|Swallow|Lick|Kiss|Guzzle?|(?#gargle/gurgle)g[ua]rgl\w+|Choke?)([s5]|ing|er)?\b)(?<!\bI )(?<!\bI\Wll )(?<!\bI will )(?<!\bI would )(?# Matching the actual Suck/etc. word >> )\S+ ((on|my|(?#your)(y([o0u]+r|o)|ur)|an?|some) )*(\S+ ){0,2}?((?#Dick)d[i1!¡jl][ck]+|(?#Penis)p[e3]n[i1!¡jl][s5]|(?#prick)pr[i1!¡jl]ck|(?#weiner)w[ei]{2}ner|ween(ie)?|peen(er)?|sc?hlong|(?#willy)will(y|ies)|pecker|(ding\W)?dong|P(ee\W?)?P(ee)?|wee\W?wee|(foreskin|4skin)|balls|my (nuts?|ball)|(?#testicles)(?#Testicles)testi(cle|e)s?|scrotum|scrote|taint|gooch|pube|pubic hair|(?#pussy/ies and puss)p[uv][s5$z]+(y|[i1!¡jl][e3](?<!puzzle))?s?|(?#vagina)vag(ina)?|vulva|(?#cooter/cooch)[CK]oo(ter|t?ch)|snatch|muff|minge|clunge|labia|clit(oris)?|(?#nipples)nip(ple|s)|(?#tits/tiddies/etc.)ti(t+|d{2})(y|ie)?|breasts|boobs?|butt|(?#ass)([a@]|4(?!5))([s5$z]{2}|r+[s5$z][e3])|anus|(?#shit)[s5$z]+h+([i1!¡jla]|(?!(eets?|iites?)\b)[i1!¡jle3]{2,})([t7]|(?<!a)z+|\\*[*_])e*(?! is)(?<!(inking|eating) some shit)(?<!(are|and) shit)(?<!(is|ly) shit)|turd|poop?|piss(?! off)(?<!on the piss)|urine(?! sample)|semen|cum|sperm|(?#jizz/jizm)ji(z[zm]|sm)|ejaculat\w+|spunk|squirt(ing)?|spit|drool|saliva|vomit|puke|puking|throw\w*\W?up)([s5]|es)?' # ignoring stuff like "eat shit on the catwalk"/"eat shit off the floor/other people's plate"
@@ -827,14 +844,13 @@ title+body (regex):
   - '(?#Shut up)((^\W*|[\n.,] ?|((wo)?man|dude|mate|m8|bro(ther)?|bruh|lady|fuckin\S*|(?#you/yo)(Y+[o0ua]+|U+)( also)?( |should|really|need to|just|can|could)+( also)?|so|oh|just|well|then) )shut up(?! (and (take|Dance|Sleep|Drive)|Meg|th|my|your (brain|thoughts))|by the Black Eyed Peas)|(?#   )Shut up ((?#you/yo)(Y+[o0ua]+|U+)))'
   - '(?#get the fuck..[out/over/etc.]/get the hell..)((?#   )GTFO|(?#   )Get (?#the)(th|d)[eai] (Hell|(?#fuck/frick/etc. when used as part of a phrase)(F+|P+h+|(?=Ef))(([UA4@O0E3I]+|V?(?=[ckq])|\\*[^UA4@O0E3IV\s](?=[ckq]{2,}))+([ckq]+|cuk|g(g|(?=i)))|(?#   )(?#F/Frick/etc.)(?!(?<=F)(reak|lip)\S* out)(?<=F)(r[iea]+([ck]+|(?<=i)g+)|lip)?|Ef+(?!f))(?<!\bFAQ)(?<!(?-i:\bF[A-Z]\b))(?<!(?-i:\b[FP][A-Z]{2}\b))[s5]?(?# << End of "fuck"  )))'
   - '(?#Fuck out of here)(?#fuck/frick/etc. when used as part of a phrase)(F+|P+h+|(?=Ef))(([UA4@O0E3I]+|V?(?=[ckq])|\\*[^UA4@O0E3IV\s](?=[ckq]{2,}))+([ckq]+|cuk|g(g|(?=i)))|(?#   )(?#F/Frick/etc.)(?!(?<=F)(reak|lip)\S* out)(?<=F)(r[iea]+([ck]+|(?<=i)g+)|lip)?|Ef+(?!f))(?<!\bFAQ)(?<!(?-i:\bF[A-Z]\b))(?<!(?-i:\b[FP][A-Z]{2}\b))[s5]?(?# << End of "fuck"  ) out(ta| of) here'
-  - 'up ((?#up yours)(Y([o0u]+r|o)|ur)s|(?#   )(?#up their ass)(Yo(ur)?|ur|their|h(er|is)) ((?#ass)([a@]|4(?!5))([s5$z]{2}|r+[s5$z][e3])|butt|bum)([e3]?[s5])?)'
-  - 'bollocks'
+  - "up ((?#up yours)(Y([o0u]+r|o)|ur)s|(?#   )(?#up their ass)(Yo(ur)?|ur|their|h(er|is)) ((?#ass)([a@]|4(?!5))([s5$z]{2}|r+[s5$z][e3])|butt|bum)([e3]?[s5])?)"
+  - "bollocks"
 action: filter
-action_reason: '/u/{{author}} Argument Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue'
+action_reason: "/u/{{author}} Argument Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue"
 set_locked: true
 
 ---
-
 ########################################################
 # Filter forbidden language - Possible Homophobia/etc.
 ########################################################
@@ -843,42 +859,40 @@ title+body (regex):
   - '(?#the f-word, short and long versions, with possible separators like f-a-...)((?# F )f(?!(g\b|gg|hgg?|h?gh?t)t?s?\b)f*h?|(?# PH )p(?!hgg?h?t?s?\b)p*h+)(?#only match separators in the short version if the A is there>)(?![^\w@]+h*[\W_]*(?# G )[g69](?![\W_]*g+h*[\W_]*o))[\W_]*(?# optional A )[a4@e3]*(?#notes>)(?!(?<=FA), )h*[\W_]*(?# G )[g69](?!\W(and a pint|ash|break|butt|end|packet|paper|smok\w*)s?\b)(?#notes>)(?!(?<=\bG) ?[=\-]? ? Sol\b)[\W_]*(?# optional G )[g69]*h*[\W_]*(?# optional O+T )([o0a4@e3i1!¡jlu]*[\W_]*[t7]+)?(ed|ing?|[o0a4@e3]ry|r?y|ie(r|st)|(?<=faggot)\w+(?#for unknown combinations))?[s5]?' # (the short no-vowel versions that are ignored at the start are in the "possible slurs" section)
   - '(?#combinations like bookf**ot/etc.)(?=\w{7})\w+?fagg?(o|e(?<=McFagge))t[s5]?' # (the short version of the word is in the possible hate section because of false positives with video IDs in urls)
   - '(?#censored version of the f-word [long version] with one non-word character [*, -, #, etc.])(?#  F >  )(f|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  A >  )(a|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  G >  )([g69]|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  optional G >  )([g69]|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))?(?#  O >  )(o|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  T >  )([t7]|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  optional S, no need for symbols since it would match either way >  )[s5]?' # the "(?!\S*?[^a-z0-9\s])" is to only match an asterisk or hyphen if there isn't another one somehwere after [] the "\\*" is in case the asterisk is escaped with a backslash due to Markdown italics
-  - '(?#fabbot, popular misspelling of the f-word)fab+ot[s5]?'
-  - '(?#puffter)p(u|oo)ff?t(er|ah)[s5]?'
+  - "(?#fabbot, popular misspelling of the f-word)fab+ot[s5]?"
+  - "(?#puffter)p(u|oo)ff?t(er|ah)[s5]?"
   - '(?#euphemisms/slang)(fudge\W?packer|muff\W?diver|(carpet|rug)\W?muncher|pillow\W?biter|shirt\W?lifter|shit\W?stabber|turd\W?burglar)[s5]?' # (alternative versions in the reporting section)
   - '(bull)?(?=d[yi]ke)(?<!Van\W(?=Dyke\b))d[yi]ke[s5]?'
   - '(tr[a@]nn(y|ies?)|trans(v[eai]st[iy]te|mental)|she\W?males?|trapsexual)[s5]?'
-  - 'gaye(st|r)'
+  - "gaye(st|r)"
   - '(?#gayboy)gh?[a@4e][yi]\W?((?<=y)boys?|as(?#gay as hell/fuck/shit)|(?#shit)[s5$z]+h+([i1!¡jla]|(?!(eets?|iites?)\b)[i1!¡jle3]{2,})([t7]|(?<!a)z+|\\*[*_])e*)'
   # "you're gay/what a gay/etc." are in the reporting "you" syntax
-  - 'femboys?'
+  - "femboys?"
   - 'globo\W?homo[s5]?' # globalization with a "gay agenda", promotion of homosexuality
 action: filter
-action_reason: '/u/{{author}} Homophobia Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue'
+action_reason: "/u/{{author}} Homophobia Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue"
 set_locked: true
 
 ---
-
 ########################################################
 # Filter forbidden language - Possible Albeism.
 ########################################################
 type: any
 title+body (regex):
   - '(?#the r-word)(?=\br)(?<!I am )(?<!I[''‘’´`]m )(?<!\bIm )r+[\W_]*[e3a4@i1!¡jlw]*[\W_]*[t7]+[\W_]*[a4@e3]*[\W_]*r+[\W_]*[dt]+[\W_]*([e3i1!¡jl]+[\W_]*[dt]+[\W_]*)?[s5]?' # includes misspellings like "reatrds" and "rwtard"
-  - '(?#tard/dumbtard/etc.)[t7]+[a4@]+r+d+([s5]|[e3]*d+)*' # (fucktard/asstard/etc. are matched in the "asshole" syntax)
+  - "(?#tard/dumbtard/etc.)[t7]+[a4@]+r+d+([s5]|[e3]*d+)*" # (fucktard/asstard/etc. are matched in the "asshole" syntax)
   - '(?=re)(?#singer>)(?<!Des[''‘’´`])ree+s?\b(?#last name>)(?<!\w (?-i:Rees))(?<!(?-i:Rees(?= [A-Z])))'
   - 'ass\W?burger[s5]?'
   - '(nut\W?(case|job)|wack\W?job|mental case)s?'
   - '(?#you need to get your head checked)((?#your)(y[o0u]+r|ur)|OP (needs to|should) (get|have) \w+)( \S+)? head checked'
   - '(?#fucked in the head/touched in your head)(touche?d|(?#fucked)(F+|P+h+)([UA4@O0E3I]+|V?(?=[ckq])|\\*[^UA4@O0E3IV\s](?=[ckq]{2,}))+([ckq]+|cuk|g(g|(?=i)))(?#ed)[e3''‘’´`]?[dt](?! up)(?# << End of "fucked"  )) in ((?#the)(th|d)[eai](ir)?|(?#your)(y([o0u]+r|o)|ur)|his|her)( god[\W_]*d?amn?)? (head|brain)'
-  - '(?#seems like..)mental illness to me' # (also see '(it|that|this)[ ''‘’´`]?i?s a mental illness' in the homophobia section)
+  - "(?#seems like..)mental illness to me" # (also see '(it|that|this)[ ''‘’´`]?i?s a mental illness' in the homophobia section)
   - '(?=schizo)(?<!\b[a''‘’´`i]m a )(?<!I was a )(?<!(?<!t )been a )(?<!I (was always|always was) a )(?<!(\Bas|\b[a''‘’´`i]m) being a )(?<!got a )(?<!\b[a''‘’´`i]m such a )(?<!\b[a''‘’´`i]m too much of a )(?<!(?=feeling)(?<!you )(?<!be )(feel|look|ound)ing like a )(?<!(?=feeling)(?<!you )(?<!be )feeling like such a )(?<!(fe(el|lt)|look|oked|ound|nded)(?<!t you \w{4}) like a )(?<!I (fe(el|lt)|look|oked|ound|nded) like such a )(?<!myself a )(?<!\bme a )(?<!\bUs )(?<!called a )(?<!n[o''‘’´`]t a )(?<![\"“”‟„])(?<!n[o''‘’´`]t )schizo(id|post\w*)?[s5]?'
 action: filter
-action_reason: '/u/{{author}} Albeism Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue'
+action_reason: "/u/{{author}} Ableism Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue"
 set_locked: true
 
 ---
-
 ########################################################
 # Filter forbidden language - Possible Racism/racial slurs, ethnic bigotry.
 ########################################################
@@ -887,95 +901,105 @@ title+body (regex):
   # Resources: http://www.rsdb.org/full / https://en.wikipedia.org/wiki/List_of_ethnic_slurs_and_epithets_by_ethnicity (and/or: https://en.wikipedia.org/wiki/List_of_ethnic_slurs)
   - '(?#the n-word with a hard r)\w*?(?# N > )[nńǹṅn̈ňñņŉṇṋṉΝ]+(?<!\b[oi]n)(?!(?<=\Bn) (?-i:IG) )[\W_]*(?# Optional I/EE > )([i1!¡jlıíìîïǐĭīĩįḯỉȉȋịᶖḭі]+[\W_]*|([e3éèėêëěĕēẽęȩếềḗḕễḝẻȅȇểẹḙḛệЕе][\W_]*){2,})(?# 2 G‘s > )(g[\W_]*){2,}(?# E > )([e3éèėêëěĕēẽęȩếềḗḕễḝẻȅȇểẹḙḛệЕе][\W_]*)+(?# R > )r+\w*' # with at least 2 g's + the [\W_]* is for possible separators like n-i-..., for African American
   - '(?#short version of the n-word + variations/combinations of it)[nńǹṅn̈ňñņŉṇṋṉΝ]+[i1!¡jlıíìîïǐĭīĩįḯỉȉȋịᶖḭі]+g+(?![\-*\\])(?# optional suffixes > )([e3]+r+(?<!niger\b)|g+[e3]+|r+([o0ae3]*|r+[o0]+[i1!¡jl]+d+)|r+[e3]+[st]+[e3]*|l*[e3]+[t7]+[e3]*|n+[o0]+g+|town|a+b+[o0]+|[e3]+r+[e3]+s+[t7]+)?s*' # (like niggres/nignog) [] here only 1 g is required and no separators (and mostly no e after the g)
-  - '(?#common misspellings of the n-word)((?#nibber)n[i1!¡jl]b+[e3]r|nygg[e3]r)[s5]?'
+  - "(?#common misspellings of the n-word)((?#nibber)n[i1!¡jl]b+[e3]r|nygg[e3]r)[s5]?"
   - '(?#censored version of the n-word with one non-word character [*, -, #, etc.])(?#  N >  )(n|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  I >  )(i|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  2 Gs >  )(g|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s])){2}(?#  E >  )(e|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  R >  )(r|(\\*[*_]|[^\w\s])(?!\S*?[^a-z0-9\s]))(?#  optional S, no need for symbols since it would match either way >  )[s5]?' # the "(?!\S*?[^a-z0-9\s])" is to only match an asterisk or hyphen if there isn't another one somehwere after [] the "\\*" is in case the asterisk is escaped with a backslash due to Markdown italics
   - '((?#   )c[o0]{2}n(head|town|y|i?e?|er)?|(?#   )(n[e3])?gr[o0][i1!¡jl]d|(?#   )[jz][i1!¡jl](g+(([a4@]|[e3]r)\W?(b([o0]+|u)(ing)?|[o0]{2}ni)|[e3]r)|j+ib[o0]{2})|(?#   )she\W?boon|(?#   )boot\W?lip\w*|(?#   )jungle\W?bunn(y|ie)|(?#   )p[o0]rch\W?m[o0]nk[iey]+|(?#   )spear\W?chucker|(?#   )moon\W?cricket)[s5]?' # for African American
   - '((dark|black)(e?y|ies)|(?#   )(mud|tar)\W?(skin(?!\W(mask|care))s?|people|child(ren)?|kids?|bab(y|ies))|(?#   )(?#shit)[s5$z]+h+([i1!¡jla]|(?!(eets?|iites?)\b)[i1!¡jle3]{2,})([t7]|(?<!a)z+|\\*[*_])e*[^ \w]?skins?)' # for African American/people with dark skin
-  - '(afri)?coon[sz]*'
-  - 'whiterights'
-  - 'd[ieao]+nd[ou]+([mn]+[oaiu][phf]+[eioau][mn]+[sz]*)?'
+  - "(afri)?coon[sz]*"
+  - "whiterights"
+  - "d[ieao]+nd[ou]+([mn]+[oaiu][phf]+[eioau][mn]+[sz]*)?"
   - 'w[e3]t[\W_]*b[a4@]ck[s5]?' # for Latin American
-  - 'b[e3][a4@e3]n[e3]r[s5]?' # for Mexican/Hispanic
-  - 'sp[i1!¡jl][ck]{1,2}[s5]?' # for Hispanic
+  - "b[e3][a4@e3]n[e3]r[s5]?" # for Mexican/Hispanic
+  - "sp[i1!¡jl][ck]{1,2}[s5]?" # for Hispanic
   - '(towel|rag)[\W_]*head[s5]?' # for Muslim/Arab/Sikh/more
   - '(sand|dune)[\W_]*(n[i1!¡jl]g(?!ht)|c[o0]{2}n|monk[iey]+)\w*' # for desert area, especially Saudi Arabia/African continent
-  - '(sand)?.?n[aei]+g+(ger|ga|a)?.?(nog+|[phf]+[eoia]+g+([ieao]+[tryie]+)?)[sz]*'
+  - "(sand)?.?n[aei]+g+(ger|ga|a)?.?(nog+|[phf]+[eoia]+g+([ieao]+[tryie]+)?)[sz]*"
   - '(k[i1!¡jly]ke|hook\W?nose|heeb|yid(?! army))[s5]?' # for Jewish
   - '(slant(?![^yei\W])\w*\W?eye[sd]?|side\W?ways?\W?(vag(ina)?|puss[yie]+|cooter)s?)' # for East Asian
-  - 'cock.?roach(es)?'
-  - 'parasite[sz]*'
-  - 'ray.?cis(s|t)?'
-  - '(out)?.?breed'
-  - 'anti.?white'
-  - 'katsap[sz]*'
-  - '[ey]?uro([phf]+[eoia]+g+([ieao]+[tryie]+)?[sz]*|trash)'
-  - 'ameri(turd|cunt|[phf]+[eoia]+g+([ieao]+[tryie]+)?)[sz]*'
-  - 'd[ie][mn]+d+[ou]+([mn]+[oui]+[phf]+[ioea]+[nm]+[sz]*)?'
-  - 'g[o0]{2}k(y|eye)?[s5]?' # for Korean/East Asian
-  - 'ch[i1!¡jl]n[ck](y|ie)?[s5]?' # for Chinese/East Asian
+  - "cock.?roach(es)?"
+  - "parasite[sz]*"
+  - "ray.?cis(s|t)?"
+  - "(out)?.?breed"
+  - "anti.?white"
+  - "katsap[sz]*"
+  - "[ey]?uro([phf]+[eoia]+g+([ieao]+[tryie]+)?[sz]*|trash)"
+  - "ameri(turd|cunt|[phf]+[eoia]+g+([ieao]+[tryie]+)?)[sz]*"
+  - "d[ie][mn]+d+[ou]+([mn]+[oui]+[phf]+[ioea]+[nm]+[sz]*)?"
+  - "g[o0]{2}k(y|eye)?[s5]?" # for Korean/East Asian
+  - "ch[i1!¡jl]n[ck](y|ie)?[s5]?" # for Chinese/East Asian
   - '(chinam[ae]n|ching[\W_]*chong)' # for Chinese
-  - 'jap[s5]?' # for Japanese
-  - 'dothead[s5]?' # for Indian (version with a separator in the reporting section)
+  - "jap[s5]?" # for Japanese
+  - "dothead[s5]?" # for Indian (version with a separator in the reporting section)
   - '(feather\W?head|injun|timber\W?n[i1!¡jl]g(?!ht)\w*)[s5]?' # for Native American
-  - 'greaseball[s5]?' # for Italian/Mediterranean/Southern European/Hispanic
-  - 'guid(o|ette)[s5]?' # for Italian
-  - '(g[yi]p+([poy]|ie)|pik(e?y|er))[s5]?' # for Romani/Irish travellers/Egyptian # for Romani/Irish travellers/Egyptian (other versions are in the reporting section)
-  - 'pol[ao]c?k[s5]?' # for Polish
-  - 'seppo[s5]?' # for American
+  - "greaseball[s5]?" # for Italian/Mediterranean/Southern European/Hispanic
+  - "guid(o|ette)[s5]?" # for Italian
+  - "(g[yi]p+([poy]|ie)|pik(e?y|er))[s5]?" # for Romani/Irish travellers/Egyptian # for Romani/Irish travellers/Egyptian (other versions are in the reporting section)
+  - "pol[ao]c?k[s5]?" # for Polish
+  - "seppo[s5]?" # for American
   - '((?#   )honk(e?y|ie)(?!\W+tonk)|(?#   )whit(e?y|ie)s(?#singular is in reporting)|(?#   )mayo(nnaise)?\W?monk[iey]+|(?#   )white\W?devil|(?#   )gweilo)[s5]?' # for White/Caucasian (cumskin is matched in the cumslut syntax)
   - '((?=redneck)(?<!might be a )redneck|(?=hick)(?<!Bill )hick|(?=hillbill)(?<!Beverly )(?<!Hollywood )hillbill(y|ie)(?! Elegy)|(white|trailer)\W?trash)s?' # for rural/poor White/Caucasian
   - 'in[\W_]*bred[s5]?'
-  - '(sheep|goat|donkey)\W?(fuck|shag)\w*'  
+  - '(sheep|goat|donkey)\W?(fuck|shag)\w*'
   - '((?#hitler)h[i1!¡jl]tl[e3]r|nazis) ((was|were)( right| ?n[o''‘’´`]?t wrong| ((?#the)(th|d)[eai] (fuckin\S )?)?hero(e?s)?)|did ?n[o''‘’´`]?t do( \S+)? wrong|h(ei|ie)l h[i1!¡jl]tl[e3]r)'
   - 'holo[\W_]*hoax([e3]?[s5])?' # holocaust denial
   - '(?=(The holocaust|Genocide|There was))(?<!saying )(?<!say )(?<!that )((?#   )(The holocaust|Genocide) ((didn[ ''‘’´`]?t|never) happened|(is|was) a lie)|(?#   )There was( no|n[ ''‘’´`]?t an?y?)( \w+)? (genocide|holocaust))' # holocaust/genocide denial
-~title+body (regex, includes-word): ['dando', 'raccoons?', 'tycoons?']
+~title+body (regex, includes-word): ["dando", "raccoons?", "tycoons?"]
 action: filter
-action_reason: '/u/{{author}} Racism/Racial Slurs Keyword: [{{match}}]. {{kind}} has been lockedand filtered to mod queue'
+action_reason: "/u/{{author}} Racism/Racial Slurs Keyword: [{{match}}]. {{kind}} has been lockedand filtered to mod queue"
 set_locked: true
 
 ---
-
 ########################################################
 # Filter forbidden language - Violent Rhetoric
 ########################################################
 type: any
 title+body (regex):
-    - '(blow|hang|neck|murder|shoot|drown|r[ao]pe|cut|burn) (the(y|m|ir)|y?o?ur|it|h(i[ms]|er)) ?(sel(f|ves?))'
-    - 'k[yht]s'
-    - '(deserves? to|(hope|wish) (they|(yo)?u|s?he)) ((should|would|could) )?(just )?(fuckin[g'']? |godd?amn? )?(commit (die|suicide)|die[sd]?|(be|g[eo]ts) (fuckin[g'']? |godd?amn? )?(shot|killed|murdered|beat( up)?|raped|run over|hung))'
-    - 'play in (some )?traffic'
-    - 'eat a (bullet|gun)'
-    - 'gu?i?ll?otine?[ds]?'
-    - 'pull the (fuckin[g'']? |godd?amn? )?trigger'
-    - "blow (yo)?urself up"
-    - 'gas (all|the|all the) (jews|kike?l?s|niggers|spi[ck]s)'
-    - "get (a|the) ?(rope|noose)"
-    - "h(a|u)ng (for treason|him|her|them|(yo)?urself)"
-    - "I\\s*hope\\s*(you|she|he|they)\\s*dies?"
-    - "(kill|nuke|glass) ?all"
-    - "gets? found (raped|murdered)"
-    - "defends? a killer"
-    - "take (her|him|his|this) (ass|bastard|bitch) out"
-    - "rot (in hell|in a cell|forever)"
-    - "light them up"
-    - "blows? (the(y|m|ir)|my|y?o?ur|it|h(i[ms]|er)).?((mother|motha|mutha)?.?(fuck[ie]n[g'']?)?)? brains? out"
-    - "drop(ping|s)? the soap"
-    - "cops? (shoot|murder)(ing)? (citizens|people)"
-~title+body (includes-word, regex): ["kills? h(i[ms]|er)) ?(sel(f|ves)?"]    
+  - "(blow|hang|neck|murder|shoot|drown|r[ao]pe|cut|burn) (the(y|m|ir)|y?o?ur|it|h(i[ms]|er)) ?(sel(f|ves?))"
+  - "k[yht]s"
+  - "(deserves? to|(hope|wish) (they|(yo)?u|s?he)) ((should|would|could) )?(just )?(fuckin[g']? |godd?amn? )?(commit (die|suicide)|die[sd]?|(be|g[eo]ts) (fuckin[g']? |godd?amn? )?(shot|killed|murdered|beat( up)?|raped|run over|hung))"
+  - "play in (some )?traffic"
+  - "eat a (bullet|gun)"
+  - "gu?i?ll?otine?[ds]?"
+  - "pull the (fuckin[g']? |godd?amn? )?trigger"
+  - "blow (yo)?urself up"
+  - "gas (all|the|all the) (jews|kike?l?s|niggers|spi[ck]s)"
+  - "get (a|the) ?(rope|noose)"
+  - "h(a|u)ng (for treason|him|her|them|(yo)?urself)"
+  - "I\\s*hope\\s*(you|she|he|they)\\s*dies?"
+  - "(kill|nuke|glass) ?all"
+  - "gets? found (raped|murdered)"
+  - "defends? a killer"
+  - "take (her|him|his|this) (ass|bastard|bitch) out"
+  - "rot (in hell|in a cell|forever)"
+  - "light them up"
+  - "blows? (the(y|m|ir)|my|y?o?ur|it|h(i[ms]|er)).?((mother|motha|mutha)?.?(fuck[ie]n[g'']?)?)? brains? out"
+  - "drop(ping|s)? the soap"
+  - "cops? (shoot|murder)(ing)? (citizens|people)"
+~title+body (includes-word, regex): ["kills? h(i[ms]|er)) ?(sel(f|ves)?"]
 ignore_blockquotes: true
 action: filter
-action_reason: '/u/{{author}} Violent Rhetoric: [{{match}}]. {{kind}} has been locked and filtered to mod queue'
+action_reason: "/u/{{author}} Violent Rhetoric: [{{match}}]. {{kind}} has been locked and filtered to mod queue"
 set_locked: true
 
 ---
-
 ########################################################
 # Filter forbidden language - Personal attack filter
 ########################################################
 type: any
-title+body (regex): ['shit[-_ ]?hole', 'libshits?', 'waste of oxygen', 'neck[ -_]?beards?', 'sickular', 'douche([ -_]?bag)?', 'white[- _]?k?ni(te|ght)s?', 'sh[ie]*t.?lord[sz]*', '^Found the', 'SJWs?', 'bleeding.?heart']
+title+body (regex):
+  [
+    "shit[-_ ]?hole",
+    "libshits?",
+    "waste of oxygen",
+    "neck[ -_]?beards?",
+    "sickular",
+    "douche([ -_]?bag)?",
+    "white[- _]?k?ni(te|ght)s?",
+    "sh[ie]*t.?lord[sz]*",
+    "^Found the",
+    "SJWs?",
+    "bleeding.?heart",
+  ]
 action: filter
-action_reason: '/u/{{author}} Personal Attack Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue'
+action_reason: "/u/{{author}} Personal Attack Keyword: [{{match}}]. {{kind}} has been locked and filtered to mod queue"
 set_locked: true
-
